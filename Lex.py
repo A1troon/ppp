@@ -5,12 +5,14 @@ from sly import Lexer
 class AverageLexer(Lexer):
     tokens = {AVERAGE, ALL, NEXT, RECORD, REST, FOR, WHILE,
               TO, TO_ARRAY, NOOPTIMIZE, COMMA, PLUS, MINUS, MULTIPLY,
-              DIVIDE, OP, CP, LEQ, GEQ, NEQ, EQUAL, LESS,
+              DIVIDE, OP, CP, LEQ, GEQ, NEQ, EQUAL, LESS, TRUE, FALSE,
               GREATER, ASSIGN, AND, OR, NOT, IDENTIFIER, NUMBER, SEMICOLON}
 
     ignore = ' \t'
 
     AVERAGE = r'[aA][vV][eE][rR][aA][gG][eE]'
+    TRUE = r'[tT][rR][uU][eE]'
+    FALSE = r'[fF][aA][lL][sS][eE]'
     ALL = r'[aA][lL][lL]'
     NEXT = r'[nN][eE][xX][tT]'
     RECORD = r'[rR][eE][cC][oO][rR][dD]'
@@ -41,7 +43,6 @@ class AverageLexer(Lexer):
     NUMBER = r'0|([1-9][0-9]*)'
     SEMICOLON = r';'
 
-
     def NUMBER(self, t):
         t.value = int(t.value)
         return t
@@ -50,13 +51,7 @@ class AverageLexer(Lexer):
     def ignore_newline(self, t):
         self.lineno += len(t.value)
 
-    def find_column(text, token):
-        last_cr = text.rfind('\n', 0, token.index)
-        if last_cr < 0:
-            last_cr = 0
-        column = (token.index - last_cr) + 1
-        return column
-
     def error(self, t):
-        print('Line %d: Bad character %r' % (self.lineno, t.value[0]))
+        val = 'Line %d: Bad character %r' % (self.lineno, t.value[0])
         self.index += 1
+        return val
