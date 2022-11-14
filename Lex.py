@@ -4,7 +4,7 @@ from sly import Lexer
 
 class AverageLexer(Lexer):
     tokens = {AVERAGE, ALL, NEXT, RECORD, REST, FOR, WHILE,
-              TO, TO_ARRAY, NOOPTIMIZE, COMMA, PLUS, MINUS, MULTIPLY,
+              TO, TOARRAY, NOOPTIMIZE, COMMA, PLUS, MINUS, MULTIPLY,
               DIVIDE, OP, CP, LEQ, GEQ, NEQ, EQUAL, LESS, TRUE, FALSE,
               GREATER, ASSIGN, AND, OR, NOT, IDENTIFIER, NUMBER, SEMICOLON}
 
@@ -20,7 +20,7 @@ class AverageLexer(Lexer):
     FOR = r'[fF][oO][rR]'
     WHILE = r'[wW][hH][iI][lL][eE]'
     TO = r'[tT][oO]'
-    TO_ARRAY = r'[tT][oO] [aA][rR][rR][aA][yY]'
+    TOARRAY = r'[tT][oO] [aA][rR][rR][aA][yY]'
     NOOPTIMIZE = r'[nN][oO][oO][pP][tT][iI][mM][iI][zZ][eE]'
     COMMA = r','
     PLUS = r'\+'
