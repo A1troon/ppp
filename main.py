@@ -4,21 +4,31 @@ import optparse
 
 from Yacc import AverageParser
 
-if __name__ == '__main__':
+
+def first():
+    inputPath = "inp"
+    outputPath = "out"
     lexer = AverageLexer()
     parser = AverageParser()
-    #text = 'AVERAGE 5 - 4,6 - 1 for x+2'
-    text = 'a = 2 AND 3 + 435;' \
-           'AVERAGE 5 - 4,6 - 1 for x+2;' \
-           'AVERAGE a, 8+1 for t > 2 while t > 2 to myarray nooptimize;' \
-
-    lexResult = lexer.tokenize(text)
-    # for tok in lexResult:
-    #     print('type=%r, value=%r' % (tok.type, tok.value))
-    result = parser.parse(lexResult)
-    print(result)
+    with open(inputPath, "r") as readFile:
+        with open(outputPath, "w") as writeFile:
+                for tok in lexer.tokenize(''.join(readFile.readlines())):
+                    if type(tok) is str:
+                        writeFile.write(tok)#catch errors for output
+                    else:
+                        writeFile.write('type=%r, value=%r\n' % (tok.type, tok.value))
 
 
+def second():
+    inputPath = "inp"
+    outputPath = "outYacc"
+    lexer = AverageLexer()
+    parser = AverageParser()
+    with open(inputPath, "r") as readFile:
+        with open(outputPath, "w") as writeFile:
+            lexResult = lexer.tokenize(''.join(readFile.readlines()))
+            result = parser.parse(lexResult)
+            writeFile.write(result)
 def prod():
     parser = optparse.OptionParser()
     parser.add_option("-i", "--input", dest='inputPath', help='read data from file')
@@ -36,3 +46,16 @@ def prod():
                         writeFile.write(tok)
                     else:
                         writeFile.write('type=%r, value=%r\n' % (tok.type, tok.value))
+
+if __name__ == '__main__':
+    #first()
+    second()
+    # lexer = AverageLexer()
+    # parser = AverageParser()
+    # # text = 'AVERAGE 5 - 4,6 - 1 for x+2'
+    # text = 'average qwerty,b,a Record 2, 4 for item <=4 toarray my_array;'
+    # lexResult = lexer.tokenize(text)
+    # for tok in lexResult:
+    #     print('type=%r, value=%r' % (tok.type, tok.value))
+    #result = parser.parse(lexResult)
+    #print(result)

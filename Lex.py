@@ -19,8 +19,8 @@ class AverageLexer(Lexer):
     REST = r'[rR][eE][sS][tT]'
     FOR = r'[fF][oO][rR]'
     WHILE = r'[wW][hH][iI][lL][eE]'
+    TOARRAY = r'[tT][oO][aA][rR][rR][aA][yY]'
     TO = r'[tT][oO]'
-    TOARRAY = r'[tT][oO] [aA][rR][rR][aA][yY]'
     NOOPTIMIZE = r'[nN][oO][oO][pP][tT][iI][mM][iI][zZ][eE]'
     COMMA = r','
     PLUS = r'\+'
@@ -54,4 +54,5 @@ class AverageLexer(Lexer):
     def error(self, t):
         val = 'Line %d: Bad character %r' % (self.lineno, t.value[0])
         self.index += 1
-        return val
+        t.value = val
+        return t
