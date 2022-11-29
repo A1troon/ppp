@@ -7,6 +7,7 @@ class AverageParser(Parser):
     tokens = AverageLexer.tokens
     def __init__(self):
         self.statementCounter = 1
+        self.assignDict = dict()
 
     def error(self, p):
         # print("Error in analyse")
@@ -73,11 +74,16 @@ class AverageParser(Parser):
 
     @_('IDENTIFIER ASSIGN EXPR')
     def MYASSIGN(self, p):
-        pass
+        self.assignDict[p[0]] = p[2]
 
-    @_('NUMBER', 'IDENTIFIER')
+    @_('NUMBER')
     def EXPR(self, p):
-        pass
+        return p[0]
+
+    @_('IDENTIFIER')
+    def EXPR(self, p):
+        if p[0] in self.assignDict.keys():
+            return self.assignDict[p[0]]
 
     @_(
        'EXPR PLUS EXPR',
@@ -87,7 +93,22 @@ class AverageParser(Parser):
        'OP EXPR CP',
         )
     def EXPR(self, p):
-        pass
+        try:
+            if p[1] == '+':
+                return p[0] + p[2]
+            elif p[1] == '-':
+                return p[0] - p[2]
+            elif p[1] == '*':
+                return p[0] * p[2]
+            elif p[1] == '/':
+                if p[2] != 0:
+                    return p[0] / p[2]
+                else:
+                    return None
+            else:
+                return p[1]
+        except:
+            print((p[0],p[1],p[2], self.statementCounter))
 
     @_('TRUE','FALSE')
     def CONDITIONEXPR(self,p):
