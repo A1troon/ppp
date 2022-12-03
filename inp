@@ -1,22 +1,68 @@
-a = 2+2
-average 2-a, 5 + 6 All While a < 3
-average 4/a, 66 * 220 Record 2 for > 3 while true to list nooptimize
-b = a * 3
-qwerty = 1 + 3 - 2 / 6 * 3
-average b, b, b, b, b next 3 while false nooptimize
-average qwerty,b,a Record 2, 4 for <=4 toarray my_array
-average ? for 1a while ot
-average zxc, ghoul for <=3 and >4 nooptimize
-average rest for Next while true toarray a
-iltv = a + b - qwerty / qwerty
-iltv == a
-iltv ? a
-iltv = a** - b* & + (qwerty - b)
-average iltv  next 5 for >=5 to my_list
-average a,b,iltv zxc = b-a ALL toarray my_list
-average ,,,, for zzz while trtr to a = b
-average a,b REcoRd 1,2 while a > 5 to array nooptimize
-average iltv for >3 and < 4 or > 5 nooptimize
-z = a > b >= t
-average z,a,b for == 4 or == 3 while <4 toarray arr
+a = 2+2;
+a1 = 4 * 6;
+a2 =  3 - 5;
+a3 = 1 / 0;
+b = 8;
+c = 15;
+d = 5;
+e = 7;
+ppp = 1 + 2 - 3 * 4;
+f = d - e;
+g = e - d;
+h = f - g;
+i = d * e;
+j = f * g;
+k = d + e;
+l = f + g;
+m = d/e;
+n = f/g;
+ez_statement1 = (f + a)*2;
+ez_statement2 = (f + a)*(m + n);
+hard_statement1 = a * k*k + b *k + c;
+hard_statement1 = (a + b) - a * f + ppp;
+average 2-a, 5 + 6 All While a < 3;
+average 4/a, 66 * 220 Record 2 for item > 3 while true to list nooptimize;
+average b, b, b, b, b next 3 while false nooptimize;
+average qwerty,b,a Record 2, 4 for item <=4 toarray my_array;
+average tt for 1 > item while item > 2;
+average zxc, ghoul for item <= 3 and item > 4 nooptimize;
+average a,b,c rest for item > 2 while true toarray a;
+average iltv  next 5 for item>=5 to my_list;
+average a,b,iltv ALL toarray my_list;
+average a,a for zzz > 4 while item < 1 to a;
+average a,b REcoRd 1,2 while a > 5 to array nooptimize;
+average iltv for item>3 and item< 4 or item> 5 nooptimize;
+average z,a,b for item== 4 or item== 3 while item<4 toarray arr;
+average t, f nooptimize;
+average a,a,a,a,a all to array;
+average a while item > 1;
+average a,a1;
+first = 5;
+second = 6;
+average first, second while item > 5 and item  < 8;
+average first, second while item >= 5 and item  <= 8;
+average first, second while item == 5 and item  == 8;
+average first, second while item > 5 or item  == 8;
+average first, second while not item > 5 or item  < 8;
+average first, second for  item > 5 or not item  < 8;
+average first, second for not item > 5 or not item  < 8 toarray my_array;
+average first, second for true or false and true while true and false or true and false;
+average first, second;
+average first, second nooptimize;
+average first, second all;
+average first, second next 2;
+average first, second record 1,2;
+average first, second rest;
+average first, second all to my_array;
+average first, second all toarray my_array;
+average first, second toarray my_array;
+average first, second rest for item > 5;
+average first, second rest while item > 5;
+average first, second all for item > 5 while item > 5;
+average first, second record 1,2 for item > 5 while item > 5;
+average first, second record 1,2 for item > 5;
+average first, second record 1,2 while item > 5 nooptimize;
+average first, second record 1,2 nooptimize;
+end = 64;
+EOF = end + 1;
 
