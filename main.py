@@ -22,13 +22,20 @@ def first():
 def second():
     inputPath = "inp"
     outputPath = "outYacc"
+    errorPath = "Arithmetics"
     lexer = AverageLexer()
     parser = AverageParser()
     with open(inputPath, "r") as readFile:
         with open(outputPath, "w") as writeFile:
-            lexResult = lexer.tokenize(''.join(readFile.readlines()))
-            result = parser.parse(lexResult)
-            writeFile.write(result)
+            with open(errorPath, "w") as errorFile:
+                lexResult = lexer.tokenize(''.join(readFile.readlines()))
+                result = parser.parse(lexResult)
+                if result is None:
+                    writeFile.write("0 statement has grammar error")
+                else:
+                    writeFile.write(result)
+                for elem in parser.Arithmetics:
+                    errorFile.write(elem + "\n")
 def prod():
     parser = optparse.OptionParser()
     parser.add_option("-i", "--input", dest='inputPath', help='read data from file')

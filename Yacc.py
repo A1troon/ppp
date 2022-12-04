@@ -5,17 +5,17 @@ from Lex import AverageLexer
 class AverageParser(Parser):
     debugfile = 'parser.out'
     tokens = AverageLexer.tokens
+
     def __init__(self):
         self.statementCounter = 1
         self.assignDict = dict()
+        self.Arithmetics = list()
 
     def error(self, p):
-        # print("Error in analyse")
-        # return
         if p:
-            print("Syntax error at statement", self.statementCounter, "at token", p.type)
-            # Just discard the token and tell the parser it's okay.
+            #print("Syntax error at statement", self.statementCounter, "at token", p.type)
             self.errok()
+
 
     precedence = (
         ('right', NOT),
@@ -37,8 +37,14 @@ class AverageParser(Parser):
 
     @_('MYAVERAGE SEMICOLON','MYASSIGN SEMICOLON')
     def MYSTATEMENT(self, p):
-        self.statementCounter += 1;
+        self.statementCounter += 1
         return (str(self.statementCounter-1) + " statement is right")
+
+
+    @_('error SEMICOLON')
+    def MYSTATEMENT(self, p):
+        self.statementCounter += 1
+        return (str(self.statementCounter - 1) + " statement has grammar error")
 
     @_('AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE')
     def MYAVERAGE(self, p):
@@ -74,6 +80,7 @@ class AverageParser(Parser):
 
     @_('IDENTIFIER ASSIGN EXPR')
     def MYASSIGN(self, p):
+        self.Arithmetics.append(f"[{self.statementCounter} statement] {p[0]} = {p[2]}")
         self.assignDict[p[0]] = p[2]
 
     @_('NUMBER')
@@ -95,20 +102,23 @@ class AverageParser(Parser):
     def EXPR(self, p):
         try:
             if p[1] == '+':
-                return p[0] + p[2]
+                value = p[0] + p[2]
             elif p[1] == '-':
-                return p[0] - p[2]
+                value = p[0] - p[2]
             elif p[1] == '*':
-                return p[0] * p[2]
+                value = p[0] * p[2]
             elif p[1] == '/':
                 if p[2] != 0:
-                    return p[0] / p[2]
+                    value = p[0] / p[2]
                 else:
+                    self.Arithmetics.append(f"[{self.statementCounter} statement] Zero division error: {p[0]} {p[1]} {p[2]}")
                     return None
             else:
                 return p[1]
+            self.Arithmetics.append(f"[{self.statementCounter} statement] {p[0]} {p[1]} {p[2]} = {value}")
+            return value
         except:
-            print((p[0],p[1],p[2], self.statementCounter))
+            self.Arithmetics.append(f"[{self.statementCounter} statement] operation with NONE value: {p[0]} {p[1]} {p[2]}")
 
     @_('TRUE','FALSE')
     def CONDITIONEXPR(self,p):
