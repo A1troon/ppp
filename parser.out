@@ -3,99 +3,100 @@ Grammar:
 Rule 0     S' -> MYSTATEMENTLIST
 Rule 1     MYSTATEMENTLIST -> MYSTATEMENT
 Rule 2     MYSTATEMENTLIST -> MYSTATEMENT MYSTATEMENTLIST
-Rule 3     MYSTATEMENT -> MYASSIGN SEMICOLON
-Rule 4     MYSTATEMENT -> MYAVERAGE SEMICOLON
-Rule 5     MYAVERAGE -> AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE
-Rule 6     MYSCOPE -> <empty>
-Rule 7     MYSCOPE -> REST
-Rule 8     MYSCOPE -> RECORD NUMBERLIST
-Rule 9     MYSCOPE -> NEXT NUMBER
-Rule 10    MYSCOPE -> ALL
-Rule 11    MYFOR -> <empty>
-Rule 12    MYFOR -> FOR CONDITIONEXPR
-Rule 13    MYWHILE -> <empty>
-Rule 14    MYWHILE -> WHILE CONDITIONEXPR
-Rule 15    MYTO -> <empty>
-Rule 16    MYTO -> TO IDENTIFIER
-Rule 17    MYTO -> TOARRAY IDENTIFIER
-Rule 18    MYNOOPTIMIZE -> <empty>
-Rule 19    MYNOOPTIMIZE -> NOOPTIMIZE
-Rule 20    EXPRLIST -> EXPR
-Rule 21    EXPRLIST -> EXPR COMMA EXPRLIST
-Rule 22    MYASSIGN -> IDENTIFIER ASSIGN EXPR
-Rule 23    EXPR -> OP EXPR CP
-Rule 24    EXPR -> EXPR DIVIDE EXPR  [precedence=left, level=5]
-Rule 25    EXPR -> EXPR MULTIPLY EXPR  [precedence=left, level=5]
-Rule 26    EXPR -> EXPR MINUS EXPR  [precedence=left, level=4]
-Rule 27    EXPR -> EXPR PLUS EXPR  [precedence=left, level=4]
-Rule 28    EXPR -> IDENTIFIER
-Rule 29    EXPR -> NUMBER
-Rule 30    CONDITIONEXPR -> OP CONDITIONEXPR CP
-Rule 31    CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR  [precedence=left, level=2]
-Rule 32    CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR  [precedence=left, level=2]
-Rule 33    CONDITIONEXPR -> EXPR EQUAL EXPR  [precedence=nonassoc, level=3]
-Rule 34    CONDITIONEXPR -> EXPR NEQ EXPR  [precedence=nonassoc, level=3]
-Rule 35    CONDITIONEXPR -> EXPR LEQ EXPR  [precedence=nonassoc, level=3]
-Rule 36    CONDITIONEXPR -> EXPR GEQ EXPR  [precedence=nonassoc, level=3]
-Rule 37    CONDITIONEXPR -> EXPR GREATER EXPR  [precedence=nonassoc, level=3]
-Rule 38    CONDITIONEXPR -> EXPR LESS EXPR  [precedence=nonassoc, level=3]
-Rule 39    CONDITIONEXPR -> NOT CONDITIONEXPR  [precedence=right, level=1]
-Rule 40    CONDITIONEXPR -> FALSE
-Rule 41    CONDITIONEXPR -> TRUE
-Rule 42    NUMBERLIST -> NUMBER
-Rule 43    NUMBERLIST -> NUMBER COMMA NUMBERLIST
+Rule 3     MYSTATEMENT -> error SEMICOLON
+Rule 4     MYSTATEMENT -> MYASSIGN SEMICOLON
+Rule 5     MYSTATEMENT -> MYAVERAGE SEMICOLON
+Rule 6     MYAVERAGE -> AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE
+Rule 7     MYSCOPE -> <empty>
+Rule 8     MYSCOPE -> REST
+Rule 9     MYSCOPE -> RECORD NUMBERLIST
+Rule 10    MYSCOPE -> NEXT NUMBER
+Rule 11    MYSCOPE -> ALL
+Rule 12    MYFOR -> <empty>
+Rule 13    MYFOR -> FOR CONDITIONEXPR
+Rule 14    MYWHILE -> <empty>
+Rule 15    MYWHILE -> WHILE CONDITIONEXPR
+Rule 16    MYTO -> <empty>
+Rule 17    MYTO -> TO IDENTIFIER
+Rule 18    MYTO -> TOARRAY IDENTIFIER
+Rule 19    MYNOOPTIMIZE -> <empty>
+Rule 20    MYNOOPTIMIZE -> NOOPTIMIZE
+Rule 21    EXPRLIST -> EXPR
+Rule 22    EXPRLIST -> EXPR COMMA EXPRLIST
+Rule 23    MYASSIGN -> IDENTIFIER ASSIGN EXPR
+Rule 24    EXPR -> OP EXPR CP
+Rule 25    EXPR -> EXPR DIVIDE EXPR  [precedence=left, level=5]
+Rule 26    EXPR -> EXPR MULTIPLY EXPR  [precedence=left, level=5]
+Rule 27    EXPR -> EXPR MINUS EXPR  [precedence=left, level=4]
+Rule 28    EXPR -> EXPR PLUS EXPR  [precedence=left, level=4]
+Rule 29    EXPR -> IDENTIFIER
+Rule 30    EXPR -> NUMBER
+Rule 31    CONDITIONEXPR -> OP CONDITIONEXPR CP
+Rule 32    CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR  [precedence=left, level=2]
+Rule 33    CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR  [precedence=left, level=2]
+Rule 34    CONDITIONEXPR -> EXPR EQUAL EXPR  [precedence=nonassoc, level=3]
+Rule 35    CONDITIONEXPR -> EXPR NEQ EXPR  [precedence=nonassoc, level=3]
+Rule 36    CONDITIONEXPR -> EXPR LEQ EXPR  [precedence=nonassoc, level=3]
+Rule 37    CONDITIONEXPR -> EXPR GEQ EXPR  [precedence=nonassoc, level=3]
+Rule 38    CONDITIONEXPR -> EXPR GREATER EXPR  [precedence=nonassoc, level=3]
+Rule 39    CONDITIONEXPR -> EXPR LESS EXPR  [precedence=nonassoc, level=3]
+Rule 40    CONDITIONEXPR -> NOT CONDITIONEXPR  [precedence=right, level=1]
+Rule 41    CONDITIONEXPR -> FALSE
+Rule 42    CONDITIONEXPR -> TRUE
+Rule 43    NUMBERLIST -> NUMBER
+Rule 44    NUMBERLIST -> NUMBER COMMA NUMBERLIST
 
 Terminals, with rules where they appear:
 
-ALL                  : 10
-AND                  : 32
-ASSIGN               : 22
-AVERAGE              : 5
-COMMA                : 21 43
-CP                   : 23 30
-DIVIDE               : 24
-EQUAL                : 33
-FALSE                : 40
-FOR                  : 12
-GEQ                  : 36
-GREATER              : 37
-IDENTIFIER           : 16 17 22 28
-LEQ                  : 35
-LESS                 : 38
-MINUS                : 26
-MULTIPLY             : 25
-NEQ                  : 34
-NEXT                 : 9
-NOOPTIMIZE           : 19
-NOT                  : 39
-NUMBER               : 9 29 42 43
-OP                   : 23 30
-OR                   : 31
-PLUS                 : 27
-RECORD               : 8
-REST                 : 7
-SEMICOLON            : 3 4
-TO                   : 16
-TOARRAY              : 17
-TRUE                 : 41
-WHILE                : 14
-error                : 
+ALL                  : 11
+AND                  : 33
+ASSIGN               : 23
+AVERAGE              : 6
+COMMA                : 22 44
+CP                   : 24 31
+DIVIDE               : 25
+EQUAL                : 34
+FALSE                : 41
+FOR                  : 13
+GEQ                  : 37
+GREATER              : 38
+IDENTIFIER           : 17 18 23 29
+LEQ                  : 36
+LESS                 : 39
+MINUS                : 27
+MULTIPLY             : 26
+NEQ                  : 35
+NEXT                 : 10
+NOOPTIMIZE           : 20
+NOT                  : 40
+NUMBER               : 10 30 43 44
+OP                   : 24 31
+OR                   : 32
+PLUS                 : 28
+RECORD               : 9
+REST                 : 8
+SEMICOLON            : 3 4 5
+TO                   : 17
+TOARRAY              : 18
+TRUE                 : 42
+WHILE                : 15
+error                : 3
 
 Nonterminals, with rules where they appear:
 
-CONDITIONEXPR        : 12 14 30 31 31 32 32 39
-EXPR                 : 20 21 22 23 24 24 25 25 26 26 27 27 33 33 34 34 35 35 36 36 37 37 38 38
-EXPRLIST             : 5 21
-MYASSIGN             : 3
-MYAVERAGE            : 4
-MYFOR                : 5
-MYNOOPTIMIZE         : 5
-MYSCOPE              : 5
+CONDITIONEXPR        : 13 15 31 32 32 33 33 40
+EXPR                 : 21 22 23 24 25 25 26 26 27 27 28 28 34 34 35 35 36 36 37 37 38 38 39 39
+EXPRLIST             : 6 22
+MYASSIGN             : 4
+MYAVERAGE            : 5
+MYFOR                : 6
+MYNOOPTIMIZE         : 6
+MYSCOPE              : 6
 MYSTATEMENT          : 1 2
 MYSTATEMENTLIST      : 2 0
-MYTO                 : 5
-MYWHILE              : 5
-NUMBERLIST           : 8 43
+MYTO                 : 6
+MYWHILE              : 6
+NUMBERLIST           : 9 44
 
 
 state 0
@@ -103,17 +104,19 @@ state 0
     (0) S' -> . MYSTATEMENTLIST
     (1) MYSTATEMENTLIST -> . MYSTATEMENT
     (2) MYSTATEMENTLIST -> . MYSTATEMENT MYSTATEMENTLIST
-    (3) MYSTATEMENT -> . MYASSIGN SEMICOLON
-    (4) MYSTATEMENT -> . MYAVERAGE SEMICOLON
-    (22) MYASSIGN -> . IDENTIFIER ASSIGN EXPR
-    (5) MYAVERAGE -> . AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE
-    IDENTIFIER      shift and go to state 5
-    AVERAGE         shift and go to state 6
+    (3) MYSTATEMENT -> . error SEMICOLON
+    (4) MYSTATEMENT -> . MYASSIGN SEMICOLON
+    (5) MYSTATEMENT -> . MYAVERAGE SEMICOLON
+    (23) MYASSIGN -> . IDENTIFIER ASSIGN EXPR
+    (6) MYAVERAGE -> . AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE
+    error           shift and go to state 3
+    IDENTIFIER      shift and go to state 6
+    AVERAGE         shift and go to state 7
 
     MYSTATEMENTLIST                shift and go to state 1
     MYSTATEMENT                    shift and go to state 2
-    MYASSIGN                       shift and go to state 3
-    MYAVERAGE                      shift and go to state 4
+    MYASSIGN                       shift and go to state 4
+    MYAVERAGE                      shift and go to state 5
 
 state 1
 
@@ -126,1262 +129,1281 @@ state 2
     (2) MYSTATEMENTLIST -> MYSTATEMENT . MYSTATEMENTLIST
     (1) MYSTATEMENTLIST -> . MYSTATEMENT
     (2) MYSTATEMENTLIST -> . MYSTATEMENT MYSTATEMENTLIST
-    (3) MYSTATEMENT -> . MYASSIGN SEMICOLON
-    (4) MYSTATEMENT -> . MYAVERAGE SEMICOLON
-    (22) MYASSIGN -> . IDENTIFIER ASSIGN EXPR
-    (5) MYAVERAGE -> . AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE
+    (3) MYSTATEMENT -> . error SEMICOLON
+    (4) MYSTATEMENT -> . MYASSIGN SEMICOLON
+    (5) MYSTATEMENT -> . MYAVERAGE SEMICOLON
+    (23) MYASSIGN -> . IDENTIFIER ASSIGN EXPR
+    (6) MYAVERAGE -> . AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE
     $end            reduce using rule 1 (MYSTATEMENTLIST -> MYSTATEMENT .)
-    IDENTIFIER      shift and go to state 5
-    AVERAGE         shift and go to state 6
+    error           shift and go to state 3
+    IDENTIFIER      shift and go to state 6
+    AVERAGE         shift and go to state 7
 
     MYSTATEMENT                    shift and go to state 2
-    MYSTATEMENTLIST                shift and go to state 7
-    MYASSIGN                       shift and go to state 3
-    MYAVERAGE                      shift and go to state 4
+    MYSTATEMENTLIST                shift and go to state 8
+    MYASSIGN                       shift and go to state 4
+    MYAVERAGE                      shift and go to state 5
 
 state 3
 
-    (3) MYSTATEMENT -> MYASSIGN . SEMICOLON
-    SEMICOLON       shift and go to state 8
+    (3) MYSTATEMENT -> error . SEMICOLON
+    SEMICOLON       shift and go to state 9
 
 
 state 4
 
-    (4) MYSTATEMENT -> MYAVERAGE . SEMICOLON
-    SEMICOLON       shift and go to state 9
+    (4) MYSTATEMENT -> MYASSIGN . SEMICOLON
+    SEMICOLON       shift and go to state 10
 
 
 state 5
 
-    (22) MYASSIGN -> IDENTIFIER . ASSIGN EXPR
-    ASSIGN          shift and go to state 10
+    (5) MYSTATEMENT -> MYAVERAGE . SEMICOLON
+    SEMICOLON       shift and go to state 11
 
 
 state 6
 
-    (5) MYAVERAGE -> AVERAGE . EXPRLIST MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE
-    (20) EXPRLIST -> . EXPR
-    (21) EXPRLIST -> . EXPR COMMA EXPRLIST
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 13
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (23) MYASSIGN -> IDENTIFIER . ASSIGN EXPR
+    ASSIGN          shift and go to state 12
 
-    EXPRLIST                       shift and go to state 11
-    EXPR                           shift and go to state 12
 
 state 7
+
+    (6) MYAVERAGE -> AVERAGE . EXPRLIST MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE
+    (21) EXPRLIST -> . EXPR
+    (22) EXPRLIST -> . EXPR COMMA EXPRLIST
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 15
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
+
+    EXPRLIST                       shift and go to state 13
+    EXPR                           shift and go to state 14
+
+state 8
 
     (2) MYSTATEMENTLIST -> MYSTATEMENT MYSTATEMENTLIST .
     $end            reduce using rule 2 (MYSTATEMENTLIST -> MYSTATEMENT MYSTATEMENTLIST .)
 
 
-state 8
-
-    (3) MYSTATEMENT -> MYASSIGN SEMICOLON .
-    IDENTIFIER      reduce using rule 3 (MYSTATEMENT -> MYASSIGN SEMICOLON .)
-    AVERAGE         reduce using rule 3 (MYSTATEMENT -> MYASSIGN SEMICOLON .)
-    $end            reduce using rule 3 (MYSTATEMENT -> MYASSIGN SEMICOLON .)
-
-
 state 9
 
-    (4) MYSTATEMENT -> MYAVERAGE SEMICOLON .
-    IDENTIFIER      reduce using rule 4 (MYSTATEMENT -> MYAVERAGE SEMICOLON .)
-    AVERAGE         reduce using rule 4 (MYSTATEMENT -> MYAVERAGE SEMICOLON .)
-    $end            reduce using rule 4 (MYSTATEMENT -> MYAVERAGE SEMICOLON .)
+    (3) MYSTATEMENT -> error SEMICOLON .
+    error           reduce using rule 3 (MYSTATEMENT -> error SEMICOLON .)
+    IDENTIFIER      reduce using rule 3 (MYSTATEMENT -> error SEMICOLON .)
+    AVERAGE         reduce using rule 3 (MYSTATEMENT -> error SEMICOLON .)
+    $end            reduce using rule 3 (MYSTATEMENT -> error SEMICOLON .)
 
 
 state 10
 
-    (22) MYASSIGN -> IDENTIFIER ASSIGN . EXPR
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 13
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (4) MYSTATEMENT -> MYASSIGN SEMICOLON .
+    error           reduce using rule 4 (MYSTATEMENT -> MYASSIGN SEMICOLON .)
+    IDENTIFIER      reduce using rule 4 (MYSTATEMENT -> MYASSIGN SEMICOLON .)
+    AVERAGE         reduce using rule 4 (MYSTATEMENT -> MYASSIGN SEMICOLON .)
+    $end            reduce using rule 4 (MYSTATEMENT -> MYASSIGN SEMICOLON .)
 
-    EXPR                           shift and go to state 16
 
 state 11
 
-    (5) MYAVERAGE -> AVERAGE EXPRLIST . MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE
-    (6) MYSCOPE -> .
-    (7) MYSCOPE -> . REST
-    (8) MYSCOPE -> . RECORD NUMBERLIST
-    (9) MYSCOPE -> . NEXT NUMBER
-    (10) MYSCOPE -> . ALL
-    FOR             reduce using rule 6 (MYSCOPE -> .)
-    WHILE           reduce using rule 6 (MYSCOPE -> .)
-    TO              reduce using rule 6 (MYSCOPE -> .)
-    TOARRAY         reduce using rule 6 (MYSCOPE -> .)
-    NOOPTIMIZE      reduce using rule 6 (MYSCOPE -> .)
-    SEMICOLON       reduce using rule 6 (MYSCOPE -> .)
-    REST            shift and go to state 18
-    RECORD          shift and go to state 19
-    NEXT            shift and go to state 20
-    ALL             shift and go to state 21
+    (5) MYSTATEMENT -> MYAVERAGE SEMICOLON .
+    error           reduce using rule 5 (MYSTATEMENT -> MYAVERAGE SEMICOLON .)
+    IDENTIFIER      reduce using rule 5 (MYSTATEMENT -> MYAVERAGE SEMICOLON .)
+    AVERAGE         reduce using rule 5 (MYSTATEMENT -> MYAVERAGE SEMICOLON .)
+    $end            reduce using rule 5 (MYSTATEMENT -> MYAVERAGE SEMICOLON .)
 
-    MYSCOPE                        shift and go to state 17
 
 state 12
 
-    (20) EXPRLIST -> EXPR .
-    (21) EXPRLIST -> EXPR . COMMA EXPRLIST
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    REST            reduce using rule 20 (EXPRLIST -> EXPR .)
-    RECORD          reduce using rule 20 (EXPRLIST -> EXPR .)
-    NEXT            reduce using rule 20 (EXPRLIST -> EXPR .)
-    ALL             reduce using rule 20 (EXPRLIST -> EXPR .)
-    FOR             reduce using rule 20 (EXPRLIST -> EXPR .)
-    WHILE           reduce using rule 20 (EXPRLIST -> EXPR .)
-    TO              reduce using rule 20 (EXPRLIST -> EXPR .)
-    TOARRAY         reduce using rule 20 (EXPRLIST -> EXPR .)
-    NOOPTIMIZE      reduce using rule 20 (EXPRLIST -> EXPR .)
-    SEMICOLON       reduce using rule 20 (EXPRLIST -> EXPR .)
-    COMMA           shift and go to state 22
-    DIVIDE          shift and go to state 23
-    MULTIPLY        shift and go to state 24
-    MINUS           shift and go to state 25
-    PLUS            shift and go to state 26
+    (23) MYASSIGN -> IDENTIFIER ASSIGN . EXPR
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 15
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
+    EXPR                           shift and go to state 18
 
 state 13
 
-    (23) EXPR -> OP . EXPR CP
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 13
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (6) MYAVERAGE -> AVERAGE EXPRLIST . MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE
+    (7) MYSCOPE -> .
+    (8) MYSCOPE -> . REST
+    (9) MYSCOPE -> . RECORD NUMBERLIST
+    (10) MYSCOPE -> . NEXT NUMBER
+    (11) MYSCOPE -> . ALL
+    FOR             reduce using rule 7 (MYSCOPE -> .)
+    WHILE           reduce using rule 7 (MYSCOPE -> .)
+    TO              reduce using rule 7 (MYSCOPE -> .)
+    TOARRAY         reduce using rule 7 (MYSCOPE -> .)
+    NOOPTIMIZE      reduce using rule 7 (MYSCOPE -> .)
+    SEMICOLON       reduce using rule 7 (MYSCOPE -> .)
+    REST            shift and go to state 20
+    RECORD          shift and go to state 21
+    NEXT            shift and go to state 22
+    ALL             shift and go to state 23
 
-    EXPR                           shift and go to state 27
+    MYSCOPE                        shift and go to state 19
 
 state 14
 
-    (28) EXPR -> IDENTIFIER .
-    COMMA           reduce using rule 28 (EXPR -> IDENTIFIER .)
-    DIVIDE          reduce using rule 28 (EXPR -> IDENTIFIER .)
-    MULTIPLY        reduce using rule 28 (EXPR -> IDENTIFIER .)
-    MINUS           reduce using rule 28 (EXPR -> IDENTIFIER .)
-    PLUS            reduce using rule 28 (EXPR -> IDENTIFIER .)
-    REST            reduce using rule 28 (EXPR -> IDENTIFIER .)
-    RECORD          reduce using rule 28 (EXPR -> IDENTIFIER .)
-    NEXT            reduce using rule 28 (EXPR -> IDENTIFIER .)
-    ALL             reduce using rule 28 (EXPR -> IDENTIFIER .)
-    FOR             reduce using rule 28 (EXPR -> IDENTIFIER .)
-    WHILE           reduce using rule 28 (EXPR -> IDENTIFIER .)
-    TO              reduce using rule 28 (EXPR -> IDENTIFIER .)
-    TOARRAY         reduce using rule 28 (EXPR -> IDENTIFIER .)
-    NOOPTIMIZE      reduce using rule 28 (EXPR -> IDENTIFIER .)
-    SEMICOLON       reduce using rule 28 (EXPR -> IDENTIFIER .)
-    CP              reduce using rule 28 (EXPR -> IDENTIFIER .)
-    EQUAL           reduce using rule 28 (EXPR -> IDENTIFIER .)
-    NEQ             reduce using rule 28 (EXPR -> IDENTIFIER .)
-    LEQ             reduce using rule 28 (EXPR -> IDENTIFIER .)
-    GEQ             reduce using rule 28 (EXPR -> IDENTIFIER .)
-    GREATER         reduce using rule 28 (EXPR -> IDENTIFIER .)
-    LESS            reduce using rule 28 (EXPR -> IDENTIFIER .)
-    OR              reduce using rule 28 (EXPR -> IDENTIFIER .)
-    AND             reduce using rule 28 (EXPR -> IDENTIFIER .)
+    (21) EXPRLIST -> EXPR .
+    (22) EXPRLIST -> EXPR . COMMA EXPRLIST
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    REST            reduce using rule 21 (EXPRLIST -> EXPR .)
+    RECORD          reduce using rule 21 (EXPRLIST -> EXPR .)
+    NEXT            reduce using rule 21 (EXPRLIST -> EXPR .)
+    ALL             reduce using rule 21 (EXPRLIST -> EXPR .)
+    FOR             reduce using rule 21 (EXPRLIST -> EXPR .)
+    WHILE           reduce using rule 21 (EXPRLIST -> EXPR .)
+    TO              reduce using rule 21 (EXPRLIST -> EXPR .)
+    TOARRAY         reduce using rule 21 (EXPRLIST -> EXPR .)
+    NOOPTIMIZE      reduce using rule 21 (EXPRLIST -> EXPR .)
+    SEMICOLON       reduce using rule 21 (EXPRLIST -> EXPR .)
+    COMMA           shift and go to state 24
+    DIVIDE          shift and go to state 25
+    MULTIPLY        shift and go to state 26
+    MINUS           shift and go to state 27
+    PLUS            shift and go to state 28
 
 
 state 15
 
-    (29) EXPR -> NUMBER .
-    COMMA           reduce using rule 29 (EXPR -> NUMBER .)
-    DIVIDE          reduce using rule 29 (EXPR -> NUMBER .)
-    MULTIPLY        reduce using rule 29 (EXPR -> NUMBER .)
-    MINUS           reduce using rule 29 (EXPR -> NUMBER .)
-    PLUS            reduce using rule 29 (EXPR -> NUMBER .)
-    REST            reduce using rule 29 (EXPR -> NUMBER .)
-    RECORD          reduce using rule 29 (EXPR -> NUMBER .)
-    NEXT            reduce using rule 29 (EXPR -> NUMBER .)
-    ALL             reduce using rule 29 (EXPR -> NUMBER .)
-    FOR             reduce using rule 29 (EXPR -> NUMBER .)
-    WHILE           reduce using rule 29 (EXPR -> NUMBER .)
-    TO              reduce using rule 29 (EXPR -> NUMBER .)
-    TOARRAY         reduce using rule 29 (EXPR -> NUMBER .)
-    NOOPTIMIZE      reduce using rule 29 (EXPR -> NUMBER .)
-    SEMICOLON       reduce using rule 29 (EXPR -> NUMBER .)
-    CP              reduce using rule 29 (EXPR -> NUMBER .)
-    EQUAL           reduce using rule 29 (EXPR -> NUMBER .)
-    NEQ             reduce using rule 29 (EXPR -> NUMBER .)
-    LEQ             reduce using rule 29 (EXPR -> NUMBER .)
-    GEQ             reduce using rule 29 (EXPR -> NUMBER .)
-    GREATER         reduce using rule 29 (EXPR -> NUMBER .)
-    LESS            reduce using rule 29 (EXPR -> NUMBER .)
-    OR              reduce using rule 29 (EXPR -> NUMBER .)
-    AND             reduce using rule 29 (EXPR -> NUMBER .)
+    (24) EXPR -> OP . EXPR CP
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 15
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
+    EXPR                           shift and go to state 29
 
 state 16
 
-    (22) MYASSIGN -> IDENTIFIER ASSIGN EXPR .
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    SEMICOLON       reduce using rule 22 (MYASSIGN -> IDENTIFIER ASSIGN EXPR .)
-    DIVIDE          shift and go to state 23
-    MULTIPLY        shift and go to state 24
-    MINUS           shift and go to state 25
-    PLUS            shift and go to state 26
+    (29) EXPR -> IDENTIFIER .
+    COMMA           reduce using rule 29 (EXPR -> IDENTIFIER .)
+    DIVIDE          reduce using rule 29 (EXPR -> IDENTIFIER .)
+    MULTIPLY        reduce using rule 29 (EXPR -> IDENTIFIER .)
+    MINUS           reduce using rule 29 (EXPR -> IDENTIFIER .)
+    PLUS            reduce using rule 29 (EXPR -> IDENTIFIER .)
+    REST            reduce using rule 29 (EXPR -> IDENTIFIER .)
+    RECORD          reduce using rule 29 (EXPR -> IDENTIFIER .)
+    NEXT            reduce using rule 29 (EXPR -> IDENTIFIER .)
+    ALL             reduce using rule 29 (EXPR -> IDENTIFIER .)
+    FOR             reduce using rule 29 (EXPR -> IDENTIFIER .)
+    WHILE           reduce using rule 29 (EXPR -> IDENTIFIER .)
+    TO              reduce using rule 29 (EXPR -> IDENTIFIER .)
+    TOARRAY         reduce using rule 29 (EXPR -> IDENTIFIER .)
+    NOOPTIMIZE      reduce using rule 29 (EXPR -> IDENTIFIER .)
+    SEMICOLON       reduce using rule 29 (EXPR -> IDENTIFIER .)
+    CP              reduce using rule 29 (EXPR -> IDENTIFIER .)
+    EQUAL           reduce using rule 29 (EXPR -> IDENTIFIER .)
+    NEQ             reduce using rule 29 (EXPR -> IDENTIFIER .)
+    LEQ             reduce using rule 29 (EXPR -> IDENTIFIER .)
+    GEQ             reduce using rule 29 (EXPR -> IDENTIFIER .)
+    GREATER         reduce using rule 29 (EXPR -> IDENTIFIER .)
+    LESS            reduce using rule 29 (EXPR -> IDENTIFIER .)
+    OR              reduce using rule 29 (EXPR -> IDENTIFIER .)
+    AND             reduce using rule 29 (EXPR -> IDENTIFIER .)
 
 
 state 17
 
-    (5) MYAVERAGE -> AVERAGE EXPRLIST MYSCOPE . MYFOR MYWHILE MYTO MYNOOPTIMIZE
-    (11) MYFOR -> .
-    (12) MYFOR -> . FOR CONDITIONEXPR
-    WHILE           reduce using rule 11 (MYFOR -> .)
-    TO              reduce using rule 11 (MYFOR -> .)
-    TOARRAY         reduce using rule 11 (MYFOR -> .)
-    NOOPTIMIZE      reduce using rule 11 (MYFOR -> .)
-    SEMICOLON       reduce using rule 11 (MYFOR -> .)
-    FOR             shift and go to state 29
+    (30) EXPR -> NUMBER .
+    COMMA           reduce using rule 30 (EXPR -> NUMBER .)
+    DIVIDE          reduce using rule 30 (EXPR -> NUMBER .)
+    MULTIPLY        reduce using rule 30 (EXPR -> NUMBER .)
+    MINUS           reduce using rule 30 (EXPR -> NUMBER .)
+    PLUS            reduce using rule 30 (EXPR -> NUMBER .)
+    REST            reduce using rule 30 (EXPR -> NUMBER .)
+    RECORD          reduce using rule 30 (EXPR -> NUMBER .)
+    NEXT            reduce using rule 30 (EXPR -> NUMBER .)
+    ALL             reduce using rule 30 (EXPR -> NUMBER .)
+    FOR             reduce using rule 30 (EXPR -> NUMBER .)
+    WHILE           reduce using rule 30 (EXPR -> NUMBER .)
+    TO              reduce using rule 30 (EXPR -> NUMBER .)
+    TOARRAY         reduce using rule 30 (EXPR -> NUMBER .)
+    NOOPTIMIZE      reduce using rule 30 (EXPR -> NUMBER .)
+    SEMICOLON       reduce using rule 30 (EXPR -> NUMBER .)
+    CP              reduce using rule 30 (EXPR -> NUMBER .)
+    EQUAL           reduce using rule 30 (EXPR -> NUMBER .)
+    NEQ             reduce using rule 30 (EXPR -> NUMBER .)
+    LEQ             reduce using rule 30 (EXPR -> NUMBER .)
+    GEQ             reduce using rule 30 (EXPR -> NUMBER .)
+    GREATER         reduce using rule 30 (EXPR -> NUMBER .)
+    LESS            reduce using rule 30 (EXPR -> NUMBER .)
+    OR              reduce using rule 30 (EXPR -> NUMBER .)
+    AND             reduce using rule 30 (EXPR -> NUMBER .)
 
-    MYFOR                          shift and go to state 28
 
 state 18
 
-    (7) MYSCOPE -> REST .
-    FOR             reduce using rule 7 (MYSCOPE -> REST .)
-    WHILE           reduce using rule 7 (MYSCOPE -> REST .)
-    TO              reduce using rule 7 (MYSCOPE -> REST .)
-    TOARRAY         reduce using rule 7 (MYSCOPE -> REST .)
-    NOOPTIMIZE      reduce using rule 7 (MYSCOPE -> REST .)
-    SEMICOLON       reduce using rule 7 (MYSCOPE -> REST .)
+    (23) MYASSIGN -> IDENTIFIER ASSIGN EXPR .
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    SEMICOLON       reduce using rule 23 (MYASSIGN -> IDENTIFIER ASSIGN EXPR .)
+    DIVIDE          shift and go to state 25
+    MULTIPLY        shift and go to state 26
+    MINUS           shift and go to state 27
+    PLUS            shift and go to state 28
 
 
 state 19
 
-    (8) MYSCOPE -> RECORD . NUMBERLIST
-    (42) NUMBERLIST -> . NUMBER
-    (43) NUMBERLIST -> . NUMBER COMMA NUMBERLIST
-    NUMBER          shift and go to state 31
+    (6) MYAVERAGE -> AVERAGE EXPRLIST MYSCOPE . MYFOR MYWHILE MYTO MYNOOPTIMIZE
+    (12) MYFOR -> .
+    (13) MYFOR -> . FOR CONDITIONEXPR
+    WHILE           reduce using rule 12 (MYFOR -> .)
+    TO              reduce using rule 12 (MYFOR -> .)
+    TOARRAY         reduce using rule 12 (MYFOR -> .)
+    NOOPTIMIZE      reduce using rule 12 (MYFOR -> .)
+    SEMICOLON       reduce using rule 12 (MYFOR -> .)
+    FOR             shift and go to state 31
 
-    NUMBERLIST                     shift and go to state 30
+    MYFOR                          shift and go to state 30
 
 state 20
 
-    (9) MYSCOPE -> NEXT . NUMBER
-    NUMBER          shift and go to state 32
+    (8) MYSCOPE -> REST .
+    FOR             reduce using rule 8 (MYSCOPE -> REST .)
+    WHILE           reduce using rule 8 (MYSCOPE -> REST .)
+    TO              reduce using rule 8 (MYSCOPE -> REST .)
+    TOARRAY         reduce using rule 8 (MYSCOPE -> REST .)
+    NOOPTIMIZE      reduce using rule 8 (MYSCOPE -> REST .)
+    SEMICOLON       reduce using rule 8 (MYSCOPE -> REST .)
 
 
 state 21
 
-    (10) MYSCOPE -> ALL .
-    FOR             reduce using rule 10 (MYSCOPE -> ALL .)
-    WHILE           reduce using rule 10 (MYSCOPE -> ALL .)
-    TO              reduce using rule 10 (MYSCOPE -> ALL .)
-    TOARRAY         reduce using rule 10 (MYSCOPE -> ALL .)
-    NOOPTIMIZE      reduce using rule 10 (MYSCOPE -> ALL .)
-    SEMICOLON       reduce using rule 10 (MYSCOPE -> ALL .)
+    (9) MYSCOPE -> RECORD . NUMBERLIST
+    (43) NUMBERLIST -> . NUMBER
+    (44) NUMBERLIST -> . NUMBER COMMA NUMBERLIST
+    NUMBER          shift and go to state 33
 
+    NUMBERLIST                     shift and go to state 32
 
 state 22
 
-    (21) EXPRLIST -> EXPR COMMA . EXPRLIST
-    (20) EXPRLIST -> . EXPR
-    (21) EXPRLIST -> . EXPR COMMA EXPRLIST
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 13
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (10) MYSCOPE -> NEXT . NUMBER
+    NUMBER          shift and go to state 34
 
-    EXPR                           shift and go to state 12
-    EXPRLIST                       shift and go to state 33
 
 state 23
 
-    (24) EXPR -> EXPR DIVIDE . EXPR
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 13
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (11) MYSCOPE -> ALL .
+    FOR             reduce using rule 11 (MYSCOPE -> ALL .)
+    WHILE           reduce using rule 11 (MYSCOPE -> ALL .)
+    TO              reduce using rule 11 (MYSCOPE -> ALL .)
+    TOARRAY         reduce using rule 11 (MYSCOPE -> ALL .)
+    NOOPTIMIZE      reduce using rule 11 (MYSCOPE -> ALL .)
+    SEMICOLON       reduce using rule 11 (MYSCOPE -> ALL .)
 
-    EXPR                           shift and go to state 34
 
 state 24
 
-    (25) EXPR -> EXPR MULTIPLY . EXPR
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 13
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (22) EXPRLIST -> EXPR COMMA . EXPRLIST
+    (21) EXPRLIST -> . EXPR
+    (22) EXPRLIST -> . EXPR COMMA EXPRLIST
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 15
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
-    EXPR                           shift and go to state 35
+    EXPR                           shift and go to state 14
+    EXPRLIST                       shift and go to state 35
 
 state 25
 
-    (26) EXPR -> EXPR MINUS . EXPR
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 13
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (25) EXPR -> EXPR DIVIDE . EXPR
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 15
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
     EXPR                           shift and go to state 36
 
 state 26
 
-    (27) EXPR -> EXPR PLUS . EXPR
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 13
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (26) EXPR -> EXPR MULTIPLY . EXPR
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 15
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
     EXPR                           shift and go to state 37
 
 state 27
 
-    (23) EXPR -> OP EXPR . CP
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    CP              shift and go to state 38
-    DIVIDE          shift and go to state 23
-    MULTIPLY        shift and go to state 24
-    MINUS           shift and go to state 25
-    PLUS            shift and go to state 26
+    (27) EXPR -> EXPR MINUS . EXPR
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 15
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
+    EXPR                           shift and go to state 38
 
 state 28
 
-    (5) MYAVERAGE -> AVERAGE EXPRLIST MYSCOPE MYFOR . MYWHILE MYTO MYNOOPTIMIZE
-    (13) MYWHILE -> .
-    (14) MYWHILE -> . WHILE CONDITIONEXPR
-    TO              reduce using rule 13 (MYWHILE -> .)
-    TOARRAY         reduce using rule 13 (MYWHILE -> .)
-    NOOPTIMIZE      reduce using rule 13 (MYWHILE -> .)
-    SEMICOLON       reduce using rule 13 (MYWHILE -> .)
-    WHILE           shift and go to state 40
+    (28) EXPR -> EXPR PLUS . EXPR
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 15
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
-    MYWHILE                        shift and go to state 39
+    EXPR                           shift and go to state 39
 
 state 29
 
-    (12) MYFOR -> FOR . CONDITIONEXPR
-    (30) CONDITIONEXPR -> . OP CONDITIONEXPR CP
-    (31) CONDITIONEXPR -> . CONDITIONEXPR OR CONDITIONEXPR
-    (32) CONDITIONEXPR -> . CONDITIONEXPR AND CONDITIONEXPR
-    (33) CONDITIONEXPR -> . EXPR EQUAL EXPR
-    (34) CONDITIONEXPR -> . EXPR NEQ EXPR
-    (35) CONDITIONEXPR -> . EXPR LEQ EXPR
-    (36) CONDITIONEXPR -> . EXPR GEQ EXPR
-    (37) CONDITIONEXPR -> . EXPR GREATER EXPR
-    (38) CONDITIONEXPR -> . EXPR LESS EXPR
-    (39) CONDITIONEXPR -> . NOT CONDITIONEXPR
-    (40) CONDITIONEXPR -> . FALSE
-    (41) CONDITIONEXPR -> . TRUE
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 42
-    NOT             shift and go to state 44
-    FALSE           shift and go to state 45
-    TRUE            shift and go to state 46
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (24) EXPR -> OP EXPR . CP
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    CP              shift and go to state 40
+    DIVIDE          shift and go to state 25
+    MULTIPLY        shift and go to state 26
+    MINUS           shift and go to state 27
+    PLUS            shift and go to state 28
 
-    CONDITIONEXPR                  shift and go to state 41
-    EXPR                           shift and go to state 43
 
 state 30
 
-    (8) MYSCOPE -> RECORD NUMBERLIST .
-    FOR             reduce using rule 8 (MYSCOPE -> RECORD NUMBERLIST .)
-    WHILE           reduce using rule 8 (MYSCOPE -> RECORD NUMBERLIST .)
-    TO              reduce using rule 8 (MYSCOPE -> RECORD NUMBERLIST .)
-    TOARRAY         reduce using rule 8 (MYSCOPE -> RECORD NUMBERLIST .)
-    NOOPTIMIZE      reduce using rule 8 (MYSCOPE -> RECORD NUMBERLIST .)
-    SEMICOLON       reduce using rule 8 (MYSCOPE -> RECORD NUMBERLIST .)
+    (6) MYAVERAGE -> AVERAGE EXPRLIST MYSCOPE MYFOR . MYWHILE MYTO MYNOOPTIMIZE
+    (14) MYWHILE -> .
+    (15) MYWHILE -> . WHILE CONDITIONEXPR
+    TO              reduce using rule 14 (MYWHILE -> .)
+    TOARRAY         reduce using rule 14 (MYWHILE -> .)
+    NOOPTIMIZE      reduce using rule 14 (MYWHILE -> .)
+    SEMICOLON       reduce using rule 14 (MYWHILE -> .)
+    WHILE           shift and go to state 42
 
+    MYWHILE                        shift and go to state 41
 
 state 31
 
-    (42) NUMBERLIST -> NUMBER .
-    (43) NUMBERLIST -> NUMBER . COMMA NUMBERLIST
-    FOR             reduce using rule 42 (NUMBERLIST -> NUMBER .)
-    WHILE           reduce using rule 42 (NUMBERLIST -> NUMBER .)
-    TO              reduce using rule 42 (NUMBERLIST -> NUMBER .)
-    TOARRAY         reduce using rule 42 (NUMBERLIST -> NUMBER .)
-    NOOPTIMIZE      reduce using rule 42 (NUMBERLIST -> NUMBER .)
-    SEMICOLON       reduce using rule 42 (NUMBERLIST -> NUMBER .)
-    COMMA           shift and go to state 47
+    (13) MYFOR -> FOR . CONDITIONEXPR
+    (31) CONDITIONEXPR -> . OP CONDITIONEXPR CP
+    (32) CONDITIONEXPR -> . CONDITIONEXPR OR CONDITIONEXPR
+    (33) CONDITIONEXPR -> . CONDITIONEXPR AND CONDITIONEXPR
+    (34) CONDITIONEXPR -> . EXPR EQUAL EXPR
+    (35) CONDITIONEXPR -> . EXPR NEQ EXPR
+    (36) CONDITIONEXPR -> . EXPR LEQ EXPR
+    (37) CONDITIONEXPR -> . EXPR GEQ EXPR
+    (38) CONDITIONEXPR -> . EXPR GREATER EXPR
+    (39) CONDITIONEXPR -> . EXPR LESS EXPR
+    (40) CONDITIONEXPR -> . NOT CONDITIONEXPR
+    (41) CONDITIONEXPR -> . FALSE
+    (42) CONDITIONEXPR -> . TRUE
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 44
+    NOT             shift and go to state 46
+    FALSE           shift and go to state 47
+    TRUE            shift and go to state 48
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
+    CONDITIONEXPR                  shift and go to state 43
+    EXPR                           shift and go to state 45
 
 state 32
 
-    (9) MYSCOPE -> NEXT NUMBER .
-    FOR             reduce using rule 9 (MYSCOPE -> NEXT NUMBER .)
-    WHILE           reduce using rule 9 (MYSCOPE -> NEXT NUMBER .)
-    TO              reduce using rule 9 (MYSCOPE -> NEXT NUMBER .)
-    TOARRAY         reduce using rule 9 (MYSCOPE -> NEXT NUMBER .)
-    NOOPTIMIZE      reduce using rule 9 (MYSCOPE -> NEXT NUMBER .)
-    SEMICOLON       reduce using rule 9 (MYSCOPE -> NEXT NUMBER .)
+    (9) MYSCOPE -> RECORD NUMBERLIST .
+    FOR             reduce using rule 9 (MYSCOPE -> RECORD NUMBERLIST .)
+    WHILE           reduce using rule 9 (MYSCOPE -> RECORD NUMBERLIST .)
+    TO              reduce using rule 9 (MYSCOPE -> RECORD NUMBERLIST .)
+    TOARRAY         reduce using rule 9 (MYSCOPE -> RECORD NUMBERLIST .)
+    NOOPTIMIZE      reduce using rule 9 (MYSCOPE -> RECORD NUMBERLIST .)
+    SEMICOLON       reduce using rule 9 (MYSCOPE -> RECORD NUMBERLIST .)
 
 
 state 33
 
-    (21) EXPRLIST -> EXPR COMMA EXPRLIST .
-    REST            reduce using rule 21 (EXPRLIST -> EXPR COMMA EXPRLIST .)
-    RECORD          reduce using rule 21 (EXPRLIST -> EXPR COMMA EXPRLIST .)
-    NEXT            reduce using rule 21 (EXPRLIST -> EXPR COMMA EXPRLIST .)
-    ALL             reduce using rule 21 (EXPRLIST -> EXPR COMMA EXPRLIST .)
-    FOR             reduce using rule 21 (EXPRLIST -> EXPR COMMA EXPRLIST .)
-    WHILE           reduce using rule 21 (EXPRLIST -> EXPR COMMA EXPRLIST .)
-    TO              reduce using rule 21 (EXPRLIST -> EXPR COMMA EXPRLIST .)
-    TOARRAY         reduce using rule 21 (EXPRLIST -> EXPR COMMA EXPRLIST .)
-    NOOPTIMIZE      reduce using rule 21 (EXPRLIST -> EXPR COMMA EXPRLIST .)
-    SEMICOLON       reduce using rule 21 (EXPRLIST -> EXPR COMMA EXPRLIST .)
+    (43) NUMBERLIST -> NUMBER .
+    (44) NUMBERLIST -> NUMBER . COMMA NUMBERLIST
+    FOR             reduce using rule 43 (NUMBERLIST -> NUMBER .)
+    WHILE           reduce using rule 43 (NUMBERLIST -> NUMBER .)
+    TO              reduce using rule 43 (NUMBERLIST -> NUMBER .)
+    TOARRAY         reduce using rule 43 (NUMBERLIST -> NUMBER .)
+    NOOPTIMIZE      reduce using rule 43 (NUMBERLIST -> NUMBER .)
+    SEMICOLON       reduce using rule 43 (NUMBERLIST -> NUMBER .)
+    COMMA           shift and go to state 49
 
 
 state 34
 
-    (24) EXPR -> EXPR DIVIDE EXPR .
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    COMMA           reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    DIVIDE          reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    MULTIPLY        reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    MINUS           reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    PLUS            reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    REST            reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    RECORD          reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    NEXT            reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    ALL             reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    FOR             reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    WHILE           reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    TO              reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    TOARRAY         reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    NOOPTIMIZE      reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    SEMICOLON       reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    CP              reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    EQUAL           reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    NEQ             reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    LEQ             reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    GEQ             reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    GREATER         reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    LESS            reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    OR              reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
-    AND             reduce using rule 24 (EXPR -> EXPR DIVIDE EXPR .)
+    (10) MYSCOPE -> NEXT NUMBER .
+    FOR             reduce using rule 10 (MYSCOPE -> NEXT NUMBER .)
+    WHILE           reduce using rule 10 (MYSCOPE -> NEXT NUMBER .)
+    TO              reduce using rule 10 (MYSCOPE -> NEXT NUMBER .)
+    TOARRAY         reduce using rule 10 (MYSCOPE -> NEXT NUMBER .)
+    NOOPTIMIZE      reduce using rule 10 (MYSCOPE -> NEXT NUMBER .)
+    SEMICOLON       reduce using rule 10 (MYSCOPE -> NEXT NUMBER .)
 
 
 state 35
 
-    (25) EXPR -> EXPR MULTIPLY EXPR .
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    COMMA           reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    DIVIDE          reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    MULTIPLY        reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    MINUS           reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    PLUS            reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    REST            reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    RECORD          reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    NEXT            reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    ALL             reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    FOR             reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    WHILE           reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    TO              reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    TOARRAY         reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    NOOPTIMIZE      reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    SEMICOLON       reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    CP              reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    EQUAL           reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    NEQ             reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    LEQ             reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    GEQ             reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    GREATER         reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    LESS            reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    OR              reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
-    AND             reduce using rule 25 (EXPR -> EXPR MULTIPLY EXPR .)
+    (22) EXPRLIST -> EXPR COMMA EXPRLIST .
+    REST            reduce using rule 22 (EXPRLIST -> EXPR COMMA EXPRLIST .)
+    RECORD          reduce using rule 22 (EXPRLIST -> EXPR COMMA EXPRLIST .)
+    NEXT            reduce using rule 22 (EXPRLIST -> EXPR COMMA EXPRLIST .)
+    ALL             reduce using rule 22 (EXPRLIST -> EXPR COMMA EXPRLIST .)
+    FOR             reduce using rule 22 (EXPRLIST -> EXPR COMMA EXPRLIST .)
+    WHILE           reduce using rule 22 (EXPRLIST -> EXPR COMMA EXPRLIST .)
+    TO              reduce using rule 22 (EXPRLIST -> EXPR COMMA EXPRLIST .)
+    TOARRAY         reduce using rule 22 (EXPRLIST -> EXPR COMMA EXPRLIST .)
+    NOOPTIMIZE      reduce using rule 22 (EXPRLIST -> EXPR COMMA EXPRLIST .)
+    SEMICOLON       reduce using rule 22 (EXPRLIST -> EXPR COMMA EXPRLIST .)
 
 
 state 36
 
-    (26) EXPR -> EXPR MINUS EXPR .
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    COMMA           reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    MINUS           reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    PLUS            reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    REST            reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    RECORD          reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    NEXT            reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    ALL             reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    FOR             reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    WHILE           reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    TO              reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    TOARRAY         reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    NOOPTIMIZE      reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    SEMICOLON       reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    CP              reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    EQUAL           reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    NEQ             reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    LEQ             reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    GEQ             reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    GREATER         reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    LESS            reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    OR              reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    AND             reduce using rule 26 (EXPR -> EXPR MINUS EXPR .)
-    DIVIDE          shift and go to state 23
-    MULTIPLY        shift and go to state 24
+    (25) EXPR -> EXPR DIVIDE EXPR .
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    COMMA           reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    DIVIDE          reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    MULTIPLY        reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    MINUS           reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    PLUS            reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    REST            reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    RECORD          reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    NEXT            reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    ALL             reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    FOR             reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    WHILE           reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    TO              reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    TOARRAY         reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    NOOPTIMIZE      reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    SEMICOLON       reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    CP              reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    EQUAL           reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    NEQ             reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    LEQ             reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    GEQ             reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    GREATER         reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    LESS            reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    OR              reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
+    AND             reduce using rule 25 (EXPR -> EXPR DIVIDE EXPR .)
 
 
 state 37
 
-    (27) EXPR -> EXPR PLUS EXPR .
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    COMMA           reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    MINUS           reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    PLUS            reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    REST            reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    RECORD          reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    NEXT            reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    ALL             reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    FOR             reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    WHILE           reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    TO              reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    TOARRAY         reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    NOOPTIMIZE      reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    SEMICOLON       reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    CP              reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    EQUAL           reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    NEQ             reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    LEQ             reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    GEQ             reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    GREATER         reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    LESS            reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    OR              reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    AND             reduce using rule 27 (EXPR -> EXPR PLUS EXPR .)
-    DIVIDE          shift and go to state 23
-    MULTIPLY        shift and go to state 24
+    (26) EXPR -> EXPR MULTIPLY EXPR .
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    COMMA           reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    DIVIDE          reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    MULTIPLY        reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    MINUS           reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    PLUS            reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    REST            reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    RECORD          reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    NEXT            reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    ALL             reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    FOR             reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    WHILE           reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    TO              reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    TOARRAY         reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    NOOPTIMIZE      reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    SEMICOLON       reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    CP              reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    EQUAL           reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    NEQ             reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    LEQ             reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    GEQ             reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    GREATER         reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    LESS            reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    OR              reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
+    AND             reduce using rule 26 (EXPR -> EXPR MULTIPLY EXPR .)
 
 
 state 38
 
-    (23) EXPR -> OP EXPR CP .
-    COMMA           reduce using rule 23 (EXPR -> OP EXPR CP .)
-    DIVIDE          reduce using rule 23 (EXPR -> OP EXPR CP .)
-    MULTIPLY        reduce using rule 23 (EXPR -> OP EXPR CP .)
-    MINUS           reduce using rule 23 (EXPR -> OP EXPR CP .)
-    PLUS            reduce using rule 23 (EXPR -> OP EXPR CP .)
-    REST            reduce using rule 23 (EXPR -> OP EXPR CP .)
-    RECORD          reduce using rule 23 (EXPR -> OP EXPR CP .)
-    NEXT            reduce using rule 23 (EXPR -> OP EXPR CP .)
-    ALL             reduce using rule 23 (EXPR -> OP EXPR CP .)
-    FOR             reduce using rule 23 (EXPR -> OP EXPR CP .)
-    WHILE           reduce using rule 23 (EXPR -> OP EXPR CP .)
-    TO              reduce using rule 23 (EXPR -> OP EXPR CP .)
-    TOARRAY         reduce using rule 23 (EXPR -> OP EXPR CP .)
-    NOOPTIMIZE      reduce using rule 23 (EXPR -> OP EXPR CP .)
-    SEMICOLON       reduce using rule 23 (EXPR -> OP EXPR CP .)
-    CP              reduce using rule 23 (EXPR -> OP EXPR CP .)
-    EQUAL           reduce using rule 23 (EXPR -> OP EXPR CP .)
-    NEQ             reduce using rule 23 (EXPR -> OP EXPR CP .)
-    LEQ             reduce using rule 23 (EXPR -> OP EXPR CP .)
-    GEQ             reduce using rule 23 (EXPR -> OP EXPR CP .)
-    GREATER         reduce using rule 23 (EXPR -> OP EXPR CP .)
-    LESS            reduce using rule 23 (EXPR -> OP EXPR CP .)
-    OR              reduce using rule 23 (EXPR -> OP EXPR CP .)
-    AND             reduce using rule 23 (EXPR -> OP EXPR CP .)
+    (27) EXPR -> EXPR MINUS EXPR .
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    COMMA           reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    MINUS           reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    PLUS            reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    REST            reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    RECORD          reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    NEXT            reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    ALL             reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    FOR             reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    WHILE           reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    TO              reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    TOARRAY         reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    NOOPTIMIZE      reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    SEMICOLON       reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    CP              reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    EQUAL           reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    NEQ             reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    LEQ             reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    GEQ             reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    GREATER         reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    LESS            reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    OR              reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    AND             reduce using rule 27 (EXPR -> EXPR MINUS EXPR .)
+    DIVIDE          shift and go to state 25
+    MULTIPLY        shift and go to state 26
 
 
 state 39
 
-    (5) MYAVERAGE -> AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE . MYTO MYNOOPTIMIZE
-    (15) MYTO -> .
-    (16) MYTO -> . TO IDENTIFIER
-    (17) MYTO -> . TOARRAY IDENTIFIER
-    NOOPTIMIZE      reduce using rule 15 (MYTO -> .)
-    SEMICOLON       reduce using rule 15 (MYTO -> .)
-    TO              shift and go to state 49
-    TOARRAY         shift and go to state 50
+    (28) EXPR -> EXPR PLUS EXPR .
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    COMMA           reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    MINUS           reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    PLUS            reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    REST            reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    RECORD          reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    NEXT            reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    ALL             reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    FOR             reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    WHILE           reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    TO              reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    TOARRAY         reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    NOOPTIMIZE      reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    SEMICOLON       reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    CP              reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    EQUAL           reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    NEQ             reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    LEQ             reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    GEQ             reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    GREATER         reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    LESS            reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    OR              reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    AND             reduce using rule 28 (EXPR -> EXPR PLUS EXPR .)
+    DIVIDE          shift and go to state 25
+    MULTIPLY        shift and go to state 26
 
-    MYTO                           shift and go to state 48
 
 state 40
 
-    (14) MYWHILE -> WHILE . CONDITIONEXPR
-    (30) CONDITIONEXPR -> . OP CONDITIONEXPR CP
-    (31) CONDITIONEXPR -> . CONDITIONEXPR OR CONDITIONEXPR
-    (32) CONDITIONEXPR -> . CONDITIONEXPR AND CONDITIONEXPR
-    (33) CONDITIONEXPR -> . EXPR EQUAL EXPR
-    (34) CONDITIONEXPR -> . EXPR NEQ EXPR
-    (35) CONDITIONEXPR -> . EXPR LEQ EXPR
-    (36) CONDITIONEXPR -> . EXPR GEQ EXPR
-    (37) CONDITIONEXPR -> . EXPR GREATER EXPR
-    (38) CONDITIONEXPR -> . EXPR LESS EXPR
-    (39) CONDITIONEXPR -> . NOT CONDITIONEXPR
-    (40) CONDITIONEXPR -> . FALSE
-    (41) CONDITIONEXPR -> . TRUE
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 42
-    NOT             shift and go to state 44
-    FALSE           shift and go to state 45
-    TRUE            shift and go to state 46
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (24) EXPR -> OP EXPR CP .
+    COMMA           reduce using rule 24 (EXPR -> OP EXPR CP .)
+    DIVIDE          reduce using rule 24 (EXPR -> OP EXPR CP .)
+    MULTIPLY        reduce using rule 24 (EXPR -> OP EXPR CP .)
+    MINUS           reduce using rule 24 (EXPR -> OP EXPR CP .)
+    PLUS            reduce using rule 24 (EXPR -> OP EXPR CP .)
+    REST            reduce using rule 24 (EXPR -> OP EXPR CP .)
+    RECORD          reduce using rule 24 (EXPR -> OP EXPR CP .)
+    NEXT            reduce using rule 24 (EXPR -> OP EXPR CP .)
+    ALL             reduce using rule 24 (EXPR -> OP EXPR CP .)
+    FOR             reduce using rule 24 (EXPR -> OP EXPR CP .)
+    WHILE           reduce using rule 24 (EXPR -> OP EXPR CP .)
+    TO              reduce using rule 24 (EXPR -> OP EXPR CP .)
+    TOARRAY         reduce using rule 24 (EXPR -> OP EXPR CP .)
+    NOOPTIMIZE      reduce using rule 24 (EXPR -> OP EXPR CP .)
+    SEMICOLON       reduce using rule 24 (EXPR -> OP EXPR CP .)
+    CP              reduce using rule 24 (EXPR -> OP EXPR CP .)
+    EQUAL           reduce using rule 24 (EXPR -> OP EXPR CP .)
+    NEQ             reduce using rule 24 (EXPR -> OP EXPR CP .)
+    LEQ             reduce using rule 24 (EXPR -> OP EXPR CP .)
+    GEQ             reduce using rule 24 (EXPR -> OP EXPR CP .)
+    GREATER         reduce using rule 24 (EXPR -> OP EXPR CP .)
+    LESS            reduce using rule 24 (EXPR -> OP EXPR CP .)
+    OR              reduce using rule 24 (EXPR -> OP EXPR CP .)
+    AND             reduce using rule 24 (EXPR -> OP EXPR CP .)
 
-    CONDITIONEXPR                  shift and go to state 51
-    EXPR                           shift and go to state 43
 
 state 41
 
-    (12) MYFOR -> FOR CONDITIONEXPR .
-    (31) CONDITIONEXPR -> CONDITIONEXPR . OR CONDITIONEXPR
-    (32) CONDITIONEXPR -> CONDITIONEXPR . AND CONDITIONEXPR
-    WHILE           reduce using rule 12 (MYFOR -> FOR CONDITIONEXPR .)
-    TO              reduce using rule 12 (MYFOR -> FOR CONDITIONEXPR .)
-    TOARRAY         reduce using rule 12 (MYFOR -> FOR CONDITIONEXPR .)
-    NOOPTIMIZE      reduce using rule 12 (MYFOR -> FOR CONDITIONEXPR .)
-    SEMICOLON       reduce using rule 12 (MYFOR -> FOR CONDITIONEXPR .)
-    OR              shift and go to state 52
-    AND             shift and go to state 53
+    (6) MYAVERAGE -> AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE . MYTO MYNOOPTIMIZE
+    (16) MYTO -> .
+    (17) MYTO -> . TO IDENTIFIER
+    (18) MYTO -> . TOARRAY IDENTIFIER
+    NOOPTIMIZE      reduce using rule 16 (MYTO -> .)
+    SEMICOLON       reduce using rule 16 (MYTO -> .)
+    TO              shift and go to state 51
+    TOARRAY         shift and go to state 52
 
+    MYTO                           shift and go to state 50
 
 state 42
 
-    (30) CONDITIONEXPR -> OP . CONDITIONEXPR CP
-    (23) EXPR -> OP . EXPR CP
-    (30) CONDITIONEXPR -> . OP CONDITIONEXPR CP
-    (31) CONDITIONEXPR -> . CONDITIONEXPR OR CONDITIONEXPR
-    (32) CONDITIONEXPR -> . CONDITIONEXPR AND CONDITIONEXPR
-    (33) CONDITIONEXPR -> . EXPR EQUAL EXPR
-    (34) CONDITIONEXPR -> . EXPR NEQ EXPR
-    (35) CONDITIONEXPR -> . EXPR LEQ EXPR
-    (36) CONDITIONEXPR -> . EXPR GEQ EXPR
-    (37) CONDITIONEXPR -> . EXPR GREATER EXPR
-    (38) CONDITIONEXPR -> . EXPR LESS EXPR
-    (39) CONDITIONEXPR -> . NOT CONDITIONEXPR
-    (40) CONDITIONEXPR -> . FALSE
-    (41) CONDITIONEXPR -> . TRUE
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 42
-    NOT             shift and go to state 44
-    FALSE           shift and go to state 45
-    TRUE            shift and go to state 46
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (15) MYWHILE -> WHILE . CONDITIONEXPR
+    (31) CONDITIONEXPR -> . OP CONDITIONEXPR CP
+    (32) CONDITIONEXPR -> . CONDITIONEXPR OR CONDITIONEXPR
+    (33) CONDITIONEXPR -> . CONDITIONEXPR AND CONDITIONEXPR
+    (34) CONDITIONEXPR -> . EXPR EQUAL EXPR
+    (35) CONDITIONEXPR -> . EXPR NEQ EXPR
+    (36) CONDITIONEXPR -> . EXPR LEQ EXPR
+    (37) CONDITIONEXPR -> . EXPR GEQ EXPR
+    (38) CONDITIONEXPR -> . EXPR GREATER EXPR
+    (39) CONDITIONEXPR -> . EXPR LESS EXPR
+    (40) CONDITIONEXPR -> . NOT CONDITIONEXPR
+    (41) CONDITIONEXPR -> . FALSE
+    (42) CONDITIONEXPR -> . TRUE
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 44
+    NOT             shift and go to state 46
+    FALSE           shift and go to state 47
+    TRUE            shift and go to state 48
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
-    CONDITIONEXPR                  shift and go to state 54
-    EXPR                           shift and go to state 55
+    CONDITIONEXPR                  shift and go to state 53
+    EXPR                           shift and go to state 45
 
 state 43
 
-    (33) CONDITIONEXPR -> EXPR . EQUAL EXPR
-    (34) CONDITIONEXPR -> EXPR . NEQ EXPR
-    (35) CONDITIONEXPR -> EXPR . LEQ EXPR
-    (36) CONDITIONEXPR -> EXPR . GEQ EXPR
-    (37) CONDITIONEXPR -> EXPR . GREATER EXPR
-    (38) CONDITIONEXPR -> EXPR . LESS EXPR
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    EQUAL           shift and go to state 56
-    NEQ             shift and go to state 57
-    LEQ             shift and go to state 58
-    GEQ             shift and go to state 59
-    GREATER         shift and go to state 60
-    LESS            shift and go to state 61
-    DIVIDE          shift and go to state 23
-    MULTIPLY        shift and go to state 24
-    MINUS           shift and go to state 25
-    PLUS            shift and go to state 26
+    (13) MYFOR -> FOR CONDITIONEXPR .
+    (32) CONDITIONEXPR -> CONDITIONEXPR . OR CONDITIONEXPR
+    (33) CONDITIONEXPR -> CONDITIONEXPR . AND CONDITIONEXPR
+    WHILE           reduce using rule 13 (MYFOR -> FOR CONDITIONEXPR .)
+    TO              reduce using rule 13 (MYFOR -> FOR CONDITIONEXPR .)
+    TOARRAY         reduce using rule 13 (MYFOR -> FOR CONDITIONEXPR .)
+    NOOPTIMIZE      reduce using rule 13 (MYFOR -> FOR CONDITIONEXPR .)
+    SEMICOLON       reduce using rule 13 (MYFOR -> FOR CONDITIONEXPR .)
+    OR              shift and go to state 54
+    AND             shift and go to state 55
 
 
 state 44
 
-    (39) CONDITIONEXPR -> NOT . CONDITIONEXPR
-    (30) CONDITIONEXPR -> . OP CONDITIONEXPR CP
-    (31) CONDITIONEXPR -> . CONDITIONEXPR OR CONDITIONEXPR
-    (32) CONDITIONEXPR -> . CONDITIONEXPR AND CONDITIONEXPR
-    (33) CONDITIONEXPR -> . EXPR EQUAL EXPR
-    (34) CONDITIONEXPR -> . EXPR NEQ EXPR
-    (35) CONDITIONEXPR -> . EXPR LEQ EXPR
-    (36) CONDITIONEXPR -> . EXPR GEQ EXPR
-    (37) CONDITIONEXPR -> . EXPR GREATER EXPR
-    (38) CONDITIONEXPR -> . EXPR LESS EXPR
-    (39) CONDITIONEXPR -> . NOT CONDITIONEXPR
-    (40) CONDITIONEXPR -> . FALSE
-    (41) CONDITIONEXPR -> . TRUE
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 42
-    NOT             shift and go to state 44
-    FALSE           shift and go to state 45
-    TRUE            shift and go to state 46
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (31) CONDITIONEXPR -> OP . CONDITIONEXPR CP
+    (24) EXPR -> OP . EXPR CP
+    (31) CONDITIONEXPR -> . OP CONDITIONEXPR CP
+    (32) CONDITIONEXPR -> . CONDITIONEXPR OR CONDITIONEXPR
+    (33) CONDITIONEXPR -> . CONDITIONEXPR AND CONDITIONEXPR
+    (34) CONDITIONEXPR -> . EXPR EQUAL EXPR
+    (35) CONDITIONEXPR -> . EXPR NEQ EXPR
+    (36) CONDITIONEXPR -> . EXPR LEQ EXPR
+    (37) CONDITIONEXPR -> . EXPR GEQ EXPR
+    (38) CONDITIONEXPR -> . EXPR GREATER EXPR
+    (39) CONDITIONEXPR -> . EXPR LESS EXPR
+    (40) CONDITIONEXPR -> . NOT CONDITIONEXPR
+    (41) CONDITIONEXPR -> . FALSE
+    (42) CONDITIONEXPR -> . TRUE
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 44
+    NOT             shift and go to state 46
+    FALSE           shift and go to state 47
+    TRUE            shift and go to state 48
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
-    CONDITIONEXPR                  shift and go to state 62
-    EXPR                           shift and go to state 43
+    CONDITIONEXPR                  shift and go to state 56
+    EXPR                           shift and go to state 57
 
 state 45
 
-    (40) CONDITIONEXPR -> FALSE .
-    OR              reduce using rule 40 (CONDITIONEXPR -> FALSE .)
-    AND             reduce using rule 40 (CONDITIONEXPR -> FALSE .)
-    WHILE           reduce using rule 40 (CONDITIONEXPR -> FALSE .)
-    TO              reduce using rule 40 (CONDITIONEXPR -> FALSE .)
-    TOARRAY         reduce using rule 40 (CONDITIONEXPR -> FALSE .)
-    NOOPTIMIZE      reduce using rule 40 (CONDITIONEXPR -> FALSE .)
-    SEMICOLON       reduce using rule 40 (CONDITIONEXPR -> FALSE .)
-    CP              reduce using rule 40 (CONDITIONEXPR -> FALSE .)
+    (34) CONDITIONEXPR -> EXPR . EQUAL EXPR
+    (35) CONDITIONEXPR -> EXPR . NEQ EXPR
+    (36) CONDITIONEXPR -> EXPR . LEQ EXPR
+    (37) CONDITIONEXPR -> EXPR . GEQ EXPR
+    (38) CONDITIONEXPR -> EXPR . GREATER EXPR
+    (39) CONDITIONEXPR -> EXPR . LESS EXPR
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    EQUAL           shift and go to state 58
+    NEQ             shift and go to state 59
+    LEQ             shift and go to state 60
+    GEQ             shift and go to state 61
+    GREATER         shift and go to state 62
+    LESS            shift and go to state 63
+    DIVIDE          shift and go to state 25
+    MULTIPLY        shift and go to state 26
+    MINUS           shift and go to state 27
+    PLUS            shift and go to state 28
 
 
 state 46
 
-    (41) CONDITIONEXPR -> TRUE .
-    OR              reduce using rule 41 (CONDITIONEXPR -> TRUE .)
-    AND             reduce using rule 41 (CONDITIONEXPR -> TRUE .)
-    WHILE           reduce using rule 41 (CONDITIONEXPR -> TRUE .)
-    TO              reduce using rule 41 (CONDITIONEXPR -> TRUE .)
-    TOARRAY         reduce using rule 41 (CONDITIONEXPR -> TRUE .)
-    NOOPTIMIZE      reduce using rule 41 (CONDITIONEXPR -> TRUE .)
-    SEMICOLON       reduce using rule 41 (CONDITIONEXPR -> TRUE .)
-    CP              reduce using rule 41 (CONDITIONEXPR -> TRUE .)
+    (40) CONDITIONEXPR -> NOT . CONDITIONEXPR
+    (31) CONDITIONEXPR -> . OP CONDITIONEXPR CP
+    (32) CONDITIONEXPR -> . CONDITIONEXPR OR CONDITIONEXPR
+    (33) CONDITIONEXPR -> . CONDITIONEXPR AND CONDITIONEXPR
+    (34) CONDITIONEXPR -> . EXPR EQUAL EXPR
+    (35) CONDITIONEXPR -> . EXPR NEQ EXPR
+    (36) CONDITIONEXPR -> . EXPR LEQ EXPR
+    (37) CONDITIONEXPR -> . EXPR GEQ EXPR
+    (38) CONDITIONEXPR -> . EXPR GREATER EXPR
+    (39) CONDITIONEXPR -> . EXPR LESS EXPR
+    (40) CONDITIONEXPR -> . NOT CONDITIONEXPR
+    (41) CONDITIONEXPR -> . FALSE
+    (42) CONDITIONEXPR -> . TRUE
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 44
+    NOT             shift and go to state 46
+    FALSE           shift and go to state 47
+    TRUE            shift and go to state 48
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
+    CONDITIONEXPR                  shift and go to state 64
+    EXPR                           shift and go to state 45
 
 state 47
 
-    (43) NUMBERLIST -> NUMBER COMMA . NUMBERLIST
-    (42) NUMBERLIST -> . NUMBER
-    (43) NUMBERLIST -> . NUMBER COMMA NUMBERLIST
-    NUMBER          shift and go to state 31
+    (41) CONDITIONEXPR -> FALSE .
+    OR              reduce using rule 41 (CONDITIONEXPR -> FALSE .)
+    AND             reduce using rule 41 (CONDITIONEXPR -> FALSE .)
+    WHILE           reduce using rule 41 (CONDITIONEXPR -> FALSE .)
+    TO              reduce using rule 41 (CONDITIONEXPR -> FALSE .)
+    TOARRAY         reduce using rule 41 (CONDITIONEXPR -> FALSE .)
+    NOOPTIMIZE      reduce using rule 41 (CONDITIONEXPR -> FALSE .)
+    SEMICOLON       reduce using rule 41 (CONDITIONEXPR -> FALSE .)
+    CP              reduce using rule 41 (CONDITIONEXPR -> FALSE .)
 
-    NUMBERLIST                     shift and go to state 63
 
 state 48
 
-    (5) MYAVERAGE -> AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE MYTO . MYNOOPTIMIZE
-    (18) MYNOOPTIMIZE -> .
-    (19) MYNOOPTIMIZE -> . NOOPTIMIZE
-    SEMICOLON       reduce using rule 18 (MYNOOPTIMIZE -> .)
-    NOOPTIMIZE      shift and go to state 65
+    (42) CONDITIONEXPR -> TRUE .
+    OR              reduce using rule 42 (CONDITIONEXPR -> TRUE .)
+    AND             reduce using rule 42 (CONDITIONEXPR -> TRUE .)
+    WHILE           reduce using rule 42 (CONDITIONEXPR -> TRUE .)
+    TO              reduce using rule 42 (CONDITIONEXPR -> TRUE .)
+    TOARRAY         reduce using rule 42 (CONDITIONEXPR -> TRUE .)
+    NOOPTIMIZE      reduce using rule 42 (CONDITIONEXPR -> TRUE .)
+    SEMICOLON       reduce using rule 42 (CONDITIONEXPR -> TRUE .)
+    CP              reduce using rule 42 (CONDITIONEXPR -> TRUE .)
 
-    MYNOOPTIMIZE                   shift and go to state 64
 
 state 49
 
-    (16) MYTO -> TO . IDENTIFIER
-    IDENTIFIER      shift and go to state 66
+    (44) NUMBERLIST -> NUMBER COMMA . NUMBERLIST
+    (43) NUMBERLIST -> . NUMBER
+    (44) NUMBERLIST -> . NUMBER COMMA NUMBERLIST
+    NUMBER          shift and go to state 33
 
+    NUMBERLIST                     shift and go to state 65
 
 state 50
 
-    (17) MYTO -> TOARRAY . IDENTIFIER
-    IDENTIFIER      shift and go to state 67
+    (6) MYAVERAGE -> AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE MYTO . MYNOOPTIMIZE
+    (19) MYNOOPTIMIZE -> .
+    (20) MYNOOPTIMIZE -> . NOOPTIMIZE
+    SEMICOLON       reduce using rule 19 (MYNOOPTIMIZE -> .)
+    NOOPTIMIZE      shift and go to state 67
 
+    MYNOOPTIMIZE                   shift and go to state 66
 
 state 51
 
-    (14) MYWHILE -> WHILE CONDITIONEXPR .
-    (31) CONDITIONEXPR -> CONDITIONEXPR . OR CONDITIONEXPR
-    (32) CONDITIONEXPR -> CONDITIONEXPR . AND CONDITIONEXPR
-    TO              reduce using rule 14 (MYWHILE -> WHILE CONDITIONEXPR .)
-    TOARRAY         reduce using rule 14 (MYWHILE -> WHILE CONDITIONEXPR .)
-    NOOPTIMIZE      reduce using rule 14 (MYWHILE -> WHILE CONDITIONEXPR .)
-    SEMICOLON       reduce using rule 14 (MYWHILE -> WHILE CONDITIONEXPR .)
-    OR              shift and go to state 52
-    AND             shift and go to state 53
+    (17) MYTO -> TO . IDENTIFIER
+    IDENTIFIER      shift and go to state 68
 
 
 state 52
 
-    (31) CONDITIONEXPR -> CONDITIONEXPR OR . CONDITIONEXPR
-    (30) CONDITIONEXPR -> . OP CONDITIONEXPR CP
-    (31) CONDITIONEXPR -> . CONDITIONEXPR OR CONDITIONEXPR
-    (32) CONDITIONEXPR -> . CONDITIONEXPR AND CONDITIONEXPR
-    (33) CONDITIONEXPR -> . EXPR EQUAL EXPR
-    (34) CONDITIONEXPR -> . EXPR NEQ EXPR
-    (35) CONDITIONEXPR -> . EXPR LEQ EXPR
-    (36) CONDITIONEXPR -> . EXPR GEQ EXPR
-    (37) CONDITIONEXPR -> . EXPR GREATER EXPR
-    (38) CONDITIONEXPR -> . EXPR LESS EXPR
-    (39) CONDITIONEXPR -> . NOT CONDITIONEXPR
-    (40) CONDITIONEXPR -> . FALSE
-    (41) CONDITIONEXPR -> . TRUE
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 42
-    NOT             shift and go to state 44
-    FALSE           shift and go to state 45
-    TRUE            shift and go to state 46
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (18) MYTO -> TOARRAY . IDENTIFIER
+    IDENTIFIER      shift and go to state 69
 
-    CONDITIONEXPR                  shift and go to state 68
-    EXPR                           shift and go to state 43
 
 state 53
 
-    (32) CONDITIONEXPR -> CONDITIONEXPR AND . CONDITIONEXPR
-    (30) CONDITIONEXPR -> . OP CONDITIONEXPR CP
-    (31) CONDITIONEXPR -> . CONDITIONEXPR OR CONDITIONEXPR
-    (32) CONDITIONEXPR -> . CONDITIONEXPR AND CONDITIONEXPR
-    (33) CONDITIONEXPR -> . EXPR EQUAL EXPR
-    (34) CONDITIONEXPR -> . EXPR NEQ EXPR
-    (35) CONDITIONEXPR -> . EXPR LEQ EXPR
-    (36) CONDITIONEXPR -> . EXPR GEQ EXPR
-    (37) CONDITIONEXPR -> . EXPR GREATER EXPR
-    (38) CONDITIONEXPR -> . EXPR LESS EXPR
-    (39) CONDITIONEXPR -> . NOT CONDITIONEXPR
-    (40) CONDITIONEXPR -> . FALSE
-    (41) CONDITIONEXPR -> . TRUE
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 42
-    NOT             shift and go to state 44
-    FALSE           shift and go to state 45
-    TRUE            shift and go to state 46
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (15) MYWHILE -> WHILE CONDITIONEXPR .
+    (32) CONDITIONEXPR -> CONDITIONEXPR . OR CONDITIONEXPR
+    (33) CONDITIONEXPR -> CONDITIONEXPR . AND CONDITIONEXPR
+    TO              reduce using rule 15 (MYWHILE -> WHILE CONDITIONEXPR .)
+    TOARRAY         reduce using rule 15 (MYWHILE -> WHILE CONDITIONEXPR .)
+    NOOPTIMIZE      reduce using rule 15 (MYWHILE -> WHILE CONDITIONEXPR .)
+    SEMICOLON       reduce using rule 15 (MYWHILE -> WHILE CONDITIONEXPR .)
+    OR              shift and go to state 54
+    AND             shift and go to state 55
 
-    CONDITIONEXPR                  shift and go to state 69
-    EXPR                           shift and go to state 43
 
 state 54
 
-    (30) CONDITIONEXPR -> OP CONDITIONEXPR . CP
-    (31) CONDITIONEXPR -> CONDITIONEXPR . OR CONDITIONEXPR
-    (32) CONDITIONEXPR -> CONDITIONEXPR . AND CONDITIONEXPR
-    CP              shift and go to state 70
-    OR              shift and go to state 52
-    AND             shift and go to state 53
+    (32) CONDITIONEXPR -> CONDITIONEXPR OR . CONDITIONEXPR
+    (31) CONDITIONEXPR -> . OP CONDITIONEXPR CP
+    (32) CONDITIONEXPR -> . CONDITIONEXPR OR CONDITIONEXPR
+    (33) CONDITIONEXPR -> . CONDITIONEXPR AND CONDITIONEXPR
+    (34) CONDITIONEXPR -> . EXPR EQUAL EXPR
+    (35) CONDITIONEXPR -> . EXPR NEQ EXPR
+    (36) CONDITIONEXPR -> . EXPR LEQ EXPR
+    (37) CONDITIONEXPR -> . EXPR GEQ EXPR
+    (38) CONDITIONEXPR -> . EXPR GREATER EXPR
+    (39) CONDITIONEXPR -> . EXPR LESS EXPR
+    (40) CONDITIONEXPR -> . NOT CONDITIONEXPR
+    (41) CONDITIONEXPR -> . FALSE
+    (42) CONDITIONEXPR -> . TRUE
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 44
+    NOT             shift and go to state 46
+    FALSE           shift and go to state 47
+    TRUE            shift and go to state 48
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
+    CONDITIONEXPR                  shift and go to state 70
+    EXPR                           shift and go to state 45
 
 state 55
 
-    (23) EXPR -> OP EXPR . CP
-    (33) CONDITIONEXPR -> EXPR . EQUAL EXPR
-    (34) CONDITIONEXPR -> EXPR . NEQ EXPR
-    (35) CONDITIONEXPR -> EXPR . LEQ EXPR
-    (36) CONDITIONEXPR -> EXPR . GEQ EXPR
-    (37) CONDITIONEXPR -> EXPR . GREATER EXPR
-    (38) CONDITIONEXPR -> EXPR . LESS EXPR
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    CP              shift and go to state 38
-    EQUAL           shift and go to state 56
-    NEQ             shift and go to state 57
-    LEQ             shift and go to state 58
-    GEQ             shift and go to state 59
-    GREATER         shift and go to state 60
-    LESS            shift and go to state 61
-    DIVIDE          shift and go to state 23
-    MULTIPLY        shift and go to state 24
-    MINUS           shift and go to state 25
-    PLUS            shift and go to state 26
+    (33) CONDITIONEXPR -> CONDITIONEXPR AND . CONDITIONEXPR
+    (31) CONDITIONEXPR -> . OP CONDITIONEXPR CP
+    (32) CONDITIONEXPR -> . CONDITIONEXPR OR CONDITIONEXPR
+    (33) CONDITIONEXPR -> . CONDITIONEXPR AND CONDITIONEXPR
+    (34) CONDITIONEXPR -> . EXPR EQUAL EXPR
+    (35) CONDITIONEXPR -> . EXPR NEQ EXPR
+    (36) CONDITIONEXPR -> . EXPR LEQ EXPR
+    (37) CONDITIONEXPR -> . EXPR GEQ EXPR
+    (38) CONDITIONEXPR -> . EXPR GREATER EXPR
+    (39) CONDITIONEXPR -> . EXPR LESS EXPR
+    (40) CONDITIONEXPR -> . NOT CONDITIONEXPR
+    (41) CONDITIONEXPR -> . FALSE
+    (42) CONDITIONEXPR -> . TRUE
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 44
+    NOT             shift and go to state 46
+    FALSE           shift and go to state 47
+    TRUE            shift and go to state 48
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
+    CONDITIONEXPR                  shift and go to state 71
+    EXPR                           shift and go to state 45
 
 state 56
 
-    (33) CONDITIONEXPR -> EXPR EQUAL . EXPR
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 13
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (31) CONDITIONEXPR -> OP CONDITIONEXPR . CP
+    (32) CONDITIONEXPR -> CONDITIONEXPR . OR CONDITIONEXPR
+    (33) CONDITIONEXPR -> CONDITIONEXPR . AND CONDITIONEXPR
+    CP              shift and go to state 72
+    OR              shift and go to state 54
+    AND             shift and go to state 55
 
-    EXPR                           shift and go to state 71
 
 state 57
 
-    (34) CONDITIONEXPR -> EXPR NEQ . EXPR
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 13
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (24) EXPR -> OP EXPR . CP
+    (34) CONDITIONEXPR -> EXPR . EQUAL EXPR
+    (35) CONDITIONEXPR -> EXPR . NEQ EXPR
+    (36) CONDITIONEXPR -> EXPR . LEQ EXPR
+    (37) CONDITIONEXPR -> EXPR . GEQ EXPR
+    (38) CONDITIONEXPR -> EXPR . GREATER EXPR
+    (39) CONDITIONEXPR -> EXPR . LESS EXPR
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    CP              shift and go to state 40
+    EQUAL           shift and go to state 58
+    NEQ             shift and go to state 59
+    LEQ             shift and go to state 60
+    GEQ             shift and go to state 61
+    GREATER         shift and go to state 62
+    LESS            shift and go to state 63
+    DIVIDE          shift and go to state 25
+    MULTIPLY        shift and go to state 26
+    MINUS           shift and go to state 27
+    PLUS            shift and go to state 28
 
-    EXPR                           shift and go to state 72
 
 state 58
 
-    (35) CONDITIONEXPR -> EXPR LEQ . EXPR
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 13
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (34) CONDITIONEXPR -> EXPR EQUAL . EXPR
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 15
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
     EXPR                           shift and go to state 73
 
 state 59
 
-    (36) CONDITIONEXPR -> EXPR GEQ . EXPR
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 13
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (35) CONDITIONEXPR -> EXPR NEQ . EXPR
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 15
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
     EXPR                           shift and go to state 74
 
 state 60
 
-    (37) CONDITIONEXPR -> EXPR GREATER . EXPR
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 13
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (36) CONDITIONEXPR -> EXPR LEQ . EXPR
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 15
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
     EXPR                           shift and go to state 75
 
 state 61
 
-    (38) CONDITIONEXPR -> EXPR LESS . EXPR
-    (23) EXPR -> . OP EXPR CP
-    (24) EXPR -> . EXPR DIVIDE EXPR
-    (25) EXPR -> . EXPR MULTIPLY EXPR
-    (26) EXPR -> . EXPR MINUS EXPR
-    (27) EXPR -> . EXPR PLUS EXPR
-    (28) EXPR -> . IDENTIFIER
-    (29) EXPR -> . NUMBER
-    OP              shift and go to state 13
-    IDENTIFIER      shift and go to state 14
-    NUMBER          shift and go to state 15
+    (37) CONDITIONEXPR -> EXPR GEQ . EXPR
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 15
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
     EXPR                           shift and go to state 76
 
 state 62
 
-    (39) CONDITIONEXPR -> NOT CONDITIONEXPR .
-    (31) CONDITIONEXPR -> CONDITIONEXPR . OR CONDITIONEXPR
-    (32) CONDITIONEXPR -> CONDITIONEXPR . AND CONDITIONEXPR
-    WHILE           reduce using rule 39 (CONDITIONEXPR -> NOT CONDITIONEXPR .)
-    TO              reduce using rule 39 (CONDITIONEXPR -> NOT CONDITIONEXPR .)
-    TOARRAY         reduce using rule 39 (CONDITIONEXPR -> NOT CONDITIONEXPR .)
-    NOOPTIMIZE      reduce using rule 39 (CONDITIONEXPR -> NOT CONDITIONEXPR .)
-    SEMICOLON       reduce using rule 39 (CONDITIONEXPR -> NOT CONDITIONEXPR .)
-    CP              reduce using rule 39 (CONDITIONEXPR -> NOT CONDITIONEXPR .)
-    OR              shift and go to state 52
-    AND             shift and go to state 53
+    (38) CONDITIONEXPR -> EXPR GREATER . EXPR
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 15
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
+    EXPR                           shift and go to state 77
 
 state 63
 
-    (43) NUMBERLIST -> NUMBER COMMA NUMBERLIST .
-    FOR             reduce using rule 43 (NUMBERLIST -> NUMBER COMMA NUMBERLIST .)
-    WHILE           reduce using rule 43 (NUMBERLIST -> NUMBER COMMA NUMBERLIST .)
-    TO              reduce using rule 43 (NUMBERLIST -> NUMBER COMMA NUMBERLIST .)
-    TOARRAY         reduce using rule 43 (NUMBERLIST -> NUMBER COMMA NUMBERLIST .)
-    NOOPTIMIZE      reduce using rule 43 (NUMBERLIST -> NUMBER COMMA NUMBERLIST .)
-    SEMICOLON       reduce using rule 43 (NUMBERLIST -> NUMBER COMMA NUMBERLIST .)
+    (39) CONDITIONEXPR -> EXPR LESS . EXPR
+    (24) EXPR -> . OP EXPR CP
+    (25) EXPR -> . EXPR DIVIDE EXPR
+    (26) EXPR -> . EXPR MULTIPLY EXPR
+    (27) EXPR -> . EXPR MINUS EXPR
+    (28) EXPR -> . EXPR PLUS EXPR
+    (29) EXPR -> . IDENTIFIER
+    (30) EXPR -> . NUMBER
+    OP              shift and go to state 15
+    IDENTIFIER      shift and go to state 16
+    NUMBER          shift and go to state 17
 
+    EXPR                           shift and go to state 78
 
 state 64
 
-    (5) MYAVERAGE -> AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE .
-    SEMICOLON       reduce using rule 5 (MYAVERAGE -> AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE .)
+    (40) CONDITIONEXPR -> NOT CONDITIONEXPR .
+    (32) CONDITIONEXPR -> CONDITIONEXPR . OR CONDITIONEXPR
+    (33) CONDITIONEXPR -> CONDITIONEXPR . AND CONDITIONEXPR
+    WHILE           reduce using rule 40 (CONDITIONEXPR -> NOT CONDITIONEXPR .)
+    TO              reduce using rule 40 (CONDITIONEXPR -> NOT CONDITIONEXPR .)
+    TOARRAY         reduce using rule 40 (CONDITIONEXPR -> NOT CONDITIONEXPR .)
+    NOOPTIMIZE      reduce using rule 40 (CONDITIONEXPR -> NOT CONDITIONEXPR .)
+    SEMICOLON       reduce using rule 40 (CONDITIONEXPR -> NOT CONDITIONEXPR .)
+    CP              reduce using rule 40 (CONDITIONEXPR -> NOT CONDITIONEXPR .)
+    OR              shift and go to state 54
+    AND             shift and go to state 55
 
 
 state 65
 
-    (19) MYNOOPTIMIZE -> NOOPTIMIZE .
-    SEMICOLON       reduce using rule 19 (MYNOOPTIMIZE -> NOOPTIMIZE .)
+    (44) NUMBERLIST -> NUMBER COMMA NUMBERLIST .
+    FOR             reduce using rule 44 (NUMBERLIST -> NUMBER COMMA NUMBERLIST .)
+    WHILE           reduce using rule 44 (NUMBERLIST -> NUMBER COMMA NUMBERLIST .)
+    TO              reduce using rule 44 (NUMBERLIST -> NUMBER COMMA NUMBERLIST .)
+    TOARRAY         reduce using rule 44 (NUMBERLIST -> NUMBER COMMA NUMBERLIST .)
+    NOOPTIMIZE      reduce using rule 44 (NUMBERLIST -> NUMBER COMMA NUMBERLIST .)
+    SEMICOLON       reduce using rule 44 (NUMBERLIST -> NUMBER COMMA NUMBERLIST .)
 
 
 state 66
 
-    (16) MYTO -> TO IDENTIFIER .
-    NOOPTIMIZE      reduce using rule 16 (MYTO -> TO IDENTIFIER .)
-    SEMICOLON       reduce using rule 16 (MYTO -> TO IDENTIFIER .)
+    (6) MYAVERAGE -> AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE .
+    SEMICOLON       reduce using rule 6 (MYAVERAGE -> AVERAGE EXPRLIST MYSCOPE MYFOR MYWHILE MYTO MYNOOPTIMIZE .)
 
 
 state 67
 
-    (17) MYTO -> TOARRAY IDENTIFIER .
-    NOOPTIMIZE      reduce using rule 17 (MYTO -> TOARRAY IDENTIFIER .)
-    SEMICOLON       reduce using rule 17 (MYTO -> TOARRAY IDENTIFIER .)
+    (20) MYNOOPTIMIZE -> NOOPTIMIZE .
+    SEMICOLON       reduce using rule 20 (MYNOOPTIMIZE -> NOOPTIMIZE .)
 
 
 state 68
 
-    (31) CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .
-    (31) CONDITIONEXPR -> CONDITIONEXPR . OR CONDITIONEXPR
-    (32) CONDITIONEXPR -> CONDITIONEXPR . AND CONDITIONEXPR
-    OR              reduce using rule 31 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
-    AND             reduce using rule 31 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
-    WHILE           reduce using rule 31 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
-    TO              reduce using rule 31 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
-    TOARRAY         reduce using rule 31 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
-    NOOPTIMIZE      reduce using rule 31 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
-    SEMICOLON       reduce using rule 31 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
-    CP              reduce using rule 31 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
+    (17) MYTO -> TO IDENTIFIER .
+    NOOPTIMIZE      reduce using rule 17 (MYTO -> TO IDENTIFIER .)
+    SEMICOLON       reduce using rule 17 (MYTO -> TO IDENTIFIER .)
 
 
 state 69
 
-    (32) CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .
-    (31) CONDITIONEXPR -> CONDITIONEXPR . OR CONDITIONEXPR
-    (32) CONDITIONEXPR -> CONDITIONEXPR . AND CONDITIONEXPR
-    OR              reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
-    AND             reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
-    WHILE           reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
-    TO              reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
-    TOARRAY         reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
-    NOOPTIMIZE      reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
-    SEMICOLON       reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
-    CP              reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
+    (18) MYTO -> TOARRAY IDENTIFIER .
+    NOOPTIMIZE      reduce using rule 18 (MYTO -> TOARRAY IDENTIFIER .)
+    SEMICOLON       reduce using rule 18 (MYTO -> TOARRAY IDENTIFIER .)
 
 
 state 70
 
-    (30) CONDITIONEXPR -> OP CONDITIONEXPR CP .
-    OR              reduce using rule 30 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
-    AND             reduce using rule 30 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
-    WHILE           reduce using rule 30 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
-    TO              reduce using rule 30 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
-    TOARRAY         reduce using rule 30 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
-    NOOPTIMIZE      reduce using rule 30 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
-    SEMICOLON       reduce using rule 30 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
-    CP              reduce using rule 30 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
+    (32) CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .
+    (32) CONDITIONEXPR -> CONDITIONEXPR . OR CONDITIONEXPR
+    (33) CONDITIONEXPR -> CONDITIONEXPR . AND CONDITIONEXPR
+    OR              reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
+    AND             reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
+    WHILE           reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
+    TO              reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
+    TOARRAY         reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
+    NOOPTIMIZE      reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
+    SEMICOLON       reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
+    CP              reduce using rule 32 (CONDITIONEXPR -> CONDITIONEXPR OR CONDITIONEXPR .)
 
 
 state 71
 
-    (33) CONDITIONEXPR -> EXPR EQUAL EXPR .
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    OR              reduce using rule 33 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
-    AND             reduce using rule 33 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
-    WHILE           reduce using rule 33 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
-    TO              reduce using rule 33 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
-    TOARRAY         reduce using rule 33 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
-    NOOPTIMIZE      reduce using rule 33 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
-    SEMICOLON       reduce using rule 33 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
-    CP              reduce using rule 33 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
-    DIVIDE          shift and go to state 23
-    MULTIPLY        shift and go to state 24
-    MINUS           shift and go to state 25
-    PLUS            shift and go to state 26
+    (33) CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .
+    (32) CONDITIONEXPR -> CONDITIONEXPR . OR CONDITIONEXPR
+    (33) CONDITIONEXPR -> CONDITIONEXPR . AND CONDITIONEXPR
+    OR              reduce using rule 33 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
+    AND             reduce using rule 33 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
+    WHILE           reduce using rule 33 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
+    TO              reduce using rule 33 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
+    TOARRAY         reduce using rule 33 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
+    NOOPTIMIZE      reduce using rule 33 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
+    SEMICOLON       reduce using rule 33 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
+    CP              reduce using rule 33 (CONDITIONEXPR -> CONDITIONEXPR AND CONDITIONEXPR .)
 
 
 state 72
 
-    (34) CONDITIONEXPR -> EXPR NEQ EXPR .
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    OR              reduce using rule 34 (CONDITIONEXPR -> EXPR NEQ EXPR .)
-    AND             reduce using rule 34 (CONDITIONEXPR -> EXPR NEQ EXPR .)
-    WHILE           reduce using rule 34 (CONDITIONEXPR -> EXPR NEQ EXPR .)
-    TO              reduce using rule 34 (CONDITIONEXPR -> EXPR NEQ EXPR .)
-    TOARRAY         reduce using rule 34 (CONDITIONEXPR -> EXPR NEQ EXPR .)
-    NOOPTIMIZE      reduce using rule 34 (CONDITIONEXPR -> EXPR NEQ EXPR .)
-    SEMICOLON       reduce using rule 34 (CONDITIONEXPR -> EXPR NEQ EXPR .)
-    CP              reduce using rule 34 (CONDITIONEXPR -> EXPR NEQ EXPR .)
-    DIVIDE          shift and go to state 23
-    MULTIPLY        shift and go to state 24
-    MINUS           shift and go to state 25
-    PLUS            shift and go to state 26
+    (31) CONDITIONEXPR -> OP CONDITIONEXPR CP .
+    OR              reduce using rule 31 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
+    AND             reduce using rule 31 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
+    WHILE           reduce using rule 31 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
+    TO              reduce using rule 31 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
+    TOARRAY         reduce using rule 31 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
+    NOOPTIMIZE      reduce using rule 31 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
+    SEMICOLON       reduce using rule 31 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
+    CP              reduce using rule 31 (CONDITIONEXPR -> OP CONDITIONEXPR CP .)
 
 
 state 73
 
-    (35) CONDITIONEXPR -> EXPR LEQ EXPR .
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    OR              reduce using rule 35 (CONDITIONEXPR -> EXPR LEQ EXPR .)
-    AND             reduce using rule 35 (CONDITIONEXPR -> EXPR LEQ EXPR .)
-    WHILE           reduce using rule 35 (CONDITIONEXPR -> EXPR LEQ EXPR .)
-    TO              reduce using rule 35 (CONDITIONEXPR -> EXPR LEQ EXPR .)
-    TOARRAY         reduce using rule 35 (CONDITIONEXPR -> EXPR LEQ EXPR .)
-    NOOPTIMIZE      reduce using rule 35 (CONDITIONEXPR -> EXPR LEQ EXPR .)
-    SEMICOLON       reduce using rule 35 (CONDITIONEXPR -> EXPR LEQ EXPR .)
-    CP              reduce using rule 35 (CONDITIONEXPR -> EXPR LEQ EXPR .)
-    DIVIDE          shift and go to state 23
-    MULTIPLY        shift and go to state 24
-    MINUS           shift and go to state 25
-    PLUS            shift and go to state 26
+    (34) CONDITIONEXPR -> EXPR EQUAL EXPR .
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    OR              reduce using rule 34 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
+    AND             reduce using rule 34 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
+    WHILE           reduce using rule 34 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
+    TO              reduce using rule 34 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
+    TOARRAY         reduce using rule 34 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
+    NOOPTIMIZE      reduce using rule 34 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
+    SEMICOLON       reduce using rule 34 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
+    CP              reduce using rule 34 (CONDITIONEXPR -> EXPR EQUAL EXPR .)
+    DIVIDE          shift and go to state 25
+    MULTIPLY        shift and go to state 26
+    MINUS           shift and go to state 27
+    PLUS            shift and go to state 28
 
 
 state 74
 
-    (36) CONDITIONEXPR -> EXPR GEQ EXPR .
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    OR              reduce using rule 36 (CONDITIONEXPR -> EXPR GEQ EXPR .)
-    AND             reduce using rule 36 (CONDITIONEXPR -> EXPR GEQ EXPR .)
-    WHILE           reduce using rule 36 (CONDITIONEXPR -> EXPR GEQ EXPR .)
-    TO              reduce using rule 36 (CONDITIONEXPR -> EXPR GEQ EXPR .)
-    TOARRAY         reduce using rule 36 (CONDITIONEXPR -> EXPR GEQ EXPR .)
-    NOOPTIMIZE      reduce using rule 36 (CONDITIONEXPR -> EXPR GEQ EXPR .)
-    SEMICOLON       reduce using rule 36 (CONDITIONEXPR -> EXPR GEQ EXPR .)
-    CP              reduce using rule 36 (CONDITIONEXPR -> EXPR GEQ EXPR .)
-    DIVIDE          shift and go to state 23
-    MULTIPLY        shift and go to state 24
-    MINUS           shift and go to state 25
-    PLUS            shift and go to state 26
+    (35) CONDITIONEXPR -> EXPR NEQ EXPR .
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    OR              reduce using rule 35 (CONDITIONEXPR -> EXPR NEQ EXPR .)
+    AND             reduce using rule 35 (CONDITIONEXPR -> EXPR NEQ EXPR .)
+    WHILE           reduce using rule 35 (CONDITIONEXPR -> EXPR NEQ EXPR .)
+    TO              reduce using rule 35 (CONDITIONEXPR -> EXPR NEQ EXPR .)
+    TOARRAY         reduce using rule 35 (CONDITIONEXPR -> EXPR NEQ EXPR .)
+    NOOPTIMIZE      reduce using rule 35 (CONDITIONEXPR -> EXPR NEQ EXPR .)
+    SEMICOLON       reduce using rule 35 (CONDITIONEXPR -> EXPR NEQ EXPR .)
+    CP              reduce using rule 35 (CONDITIONEXPR -> EXPR NEQ EXPR .)
+    DIVIDE          shift and go to state 25
+    MULTIPLY        shift and go to state 26
+    MINUS           shift and go to state 27
+    PLUS            shift and go to state 28
 
 
 state 75
 
-    (37) CONDITIONEXPR -> EXPR GREATER EXPR .
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    OR              reduce using rule 37 (CONDITIONEXPR -> EXPR GREATER EXPR .)
-    AND             reduce using rule 37 (CONDITIONEXPR -> EXPR GREATER EXPR .)
-    WHILE           reduce using rule 37 (CONDITIONEXPR -> EXPR GREATER EXPR .)
-    TO              reduce using rule 37 (CONDITIONEXPR -> EXPR GREATER EXPR .)
-    TOARRAY         reduce using rule 37 (CONDITIONEXPR -> EXPR GREATER EXPR .)
-    NOOPTIMIZE      reduce using rule 37 (CONDITIONEXPR -> EXPR GREATER EXPR .)
-    SEMICOLON       reduce using rule 37 (CONDITIONEXPR -> EXPR GREATER EXPR .)
-    CP              reduce using rule 37 (CONDITIONEXPR -> EXPR GREATER EXPR .)
-    DIVIDE          shift and go to state 23
-    MULTIPLY        shift and go to state 24
-    MINUS           shift and go to state 25
-    PLUS            shift and go to state 26
+    (36) CONDITIONEXPR -> EXPR LEQ EXPR .
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    OR              reduce using rule 36 (CONDITIONEXPR -> EXPR LEQ EXPR .)
+    AND             reduce using rule 36 (CONDITIONEXPR -> EXPR LEQ EXPR .)
+    WHILE           reduce using rule 36 (CONDITIONEXPR -> EXPR LEQ EXPR .)
+    TO              reduce using rule 36 (CONDITIONEXPR -> EXPR LEQ EXPR .)
+    TOARRAY         reduce using rule 36 (CONDITIONEXPR -> EXPR LEQ EXPR .)
+    NOOPTIMIZE      reduce using rule 36 (CONDITIONEXPR -> EXPR LEQ EXPR .)
+    SEMICOLON       reduce using rule 36 (CONDITIONEXPR -> EXPR LEQ EXPR .)
+    CP              reduce using rule 36 (CONDITIONEXPR -> EXPR LEQ EXPR .)
+    DIVIDE          shift and go to state 25
+    MULTIPLY        shift and go to state 26
+    MINUS           shift and go to state 27
+    PLUS            shift and go to state 28
 
 
 state 76
 
-    (38) CONDITIONEXPR -> EXPR LESS EXPR .
-    (24) EXPR -> EXPR . DIVIDE EXPR
-    (25) EXPR -> EXPR . MULTIPLY EXPR
-    (26) EXPR -> EXPR . MINUS EXPR
-    (27) EXPR -> EXPR . PLUS EXPR
-    OR              reduce using rule 38 (CONDITIONEXPR -> EXPR LESS EXPR .)
-    AND             reduce using rule 38 (CONDITIONEXPR -> EXPR LESS EXPR .)
-    WHILE           reduce using rule 38 (CONDITIONEXPR -> EXPR LESS EXPR .)
-    TO              reduce using rule 38 (CONDITIONEXPR -> EXPR LESS EXPR .)
-    TOARRAY         reduce using rule 38 (CONDITIONEXPR -> EXPR LESS EXPR .)
-    NOOPTIMIZE      reduce using rule 38 (CONDITIONEXPR -> EXPR LESS EXPR .)
-    SEMICOLON       reduce using rule 38 (CONDITIONEXPR -> EXPR LESS EXPR .)
-    CP              reduce using rule 38 (CONDITIONEXPR -> EXPR LESS EXPR .)
-    DIVIDE          shift and go to state 23
-    MULTIPLY        shift and go to state 24
-    MINUS           shift and go to state 25
-    PLUS            shift and go to state 26
+    (37) CONDITIONEXPR -> EXPR GEQ EXPR .
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    OR              reduce using rule 37 (CONDITIONEXPR -> EXPR GEQ EXPR .)
+    AND             reduce using rule 37 (CONDITIONEXPR -> EXPR GEQ EXPR .)
+    WHILE           reduce using rule 37 (CONDITIONEXPR -> EXPR GEQ EXPR .)
+    TO              reduce using rule 37 (CONDITIONEXPR -> EXPR GEQ EXPR .)
+    TOARRAY         reduce using rule 37 (CONDITIONEXPR -> EXPR GEQ EXPR .)
+    NOOPTIMIZE      reduce using rule 37 (CONDITIONEXPR -> EXPR GEQ EXPR .)
+    SEMICOLON       reduce using rule 37 (CONDITIONEXPR -> EXPR GEQ EXPR .)
+    CP              reduce using rule 37 (CONDITIONEXPR -> EXPR GEQ EXPR .)
+    DIVIDE          shift and go to state 25
+    MULTIPLY        shift and go to state 26
+    MINUS           shift and go to state 27
+    PLUS            shift and go to state 28
+
+
+state 77
+
+    (38) CONDITIONEXPR -> EXPR GREATER EXPR .
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    OR              reduce using rule 38 (CONDITIONEXPR -> EXPR GREATER EXPR .)
+    AND             reduce using rule 38 (CONDITIONEXPR -> EXPR GREATER EXPR .)
+    WHILE           reduce using rule 38 (CONDITIONEXPR -> EXPR GREATER EXPR .)
+    TO              reduce using rule 38 (CONDITIONEXPR -> EXPR GREATER EXPR .)
+    TOARRAY         reduce using rule 38 (CONDITIONEXPR -> EXPR GREATER EXPR .)
+    NOOPTIMIZE      reduce using rule 38 (CONDITIONEXPR -> EXPR GREATER EXPR .)
+    SEMICOLON       reduce using rule 38 (CONDITIONEXPR -> EXPR GREATER EXPR .)
+    CP              reduce using rule 38 (CONDITIONEXPR -> EXPR GREATER EXPR .)
+    DIVIDE          shift and go to state 25
+    MULTIPLY        shift and go to state 26
+    MINUS           shift and go to state 27
+    PLUS            shift and go to state 28
+
+
+state 78
+
+    (39) CONDITIONEXPR -> EXPR LESS EXPR .
+    (25) EXPR -> EXPR . DIVIDE EXPR
+    (26) EXPR -> EXPR . MULTIPLY EXPR
+    (27) EXPR -> EXPR . MINUS EXPR
+    (28) EXPR -> EXPR . PLUS EXPR
+    OR              reduce using rule 39 (CONDITIONEXPR -> EXPR LESS EXPR .)
+    AND             reduce using rule 39 (CONDITIONEXPR -> EXPR LESS EXPR .)
+    WHILE           reduce using rule 39 (CONDITIONEXPR -> EXPR LESS EXPR .)
+    TO              reduce using rule 39 (CONDITIONEXPR -> EXPR LESS EXPR .)
+    TOARRAY         reduce using rule 39 (CONDITIONEXPR -> EXPR LESS EXPR .)
+    NOOPTIMIZE      reduce using rule 39 (CONDITIONEXPR -> EXPR LESS EXPR .)
+    SEMICOLON       reduce using rule 39 (CONDITIONEXPR -> EXPR LESS EXPR .)
+    CP              reduce using rule 39 (CONDITIONEXPR -> EXPR LESS EXPR .)
+    DIVIDE          shift and go to state 25
+    MULTIPLY        shift and go to state 26
+    MINUS           shift and go to state 27
+    PLUS            shift and go to state 28
